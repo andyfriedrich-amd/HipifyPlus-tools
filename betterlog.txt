@@ -1,0 +1,1303 @@
+[0mthird_party/gloo/cmake/Modules/Findrccl.cmake skippedC:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\ApplyGridUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\ApplyGridUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\AsmUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\AsmUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\Atomic.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\Atomic.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\cub-RadixSortKeys.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\cub-RadixSortKeys.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\cub-RadixSortPairs.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\cub-RadixSortPairs.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\cub.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\cub.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\cub.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\cub.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\cub_definitions.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\cub_definitions.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\CUDAApplyUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\HIPApplyUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\CUDAGraphsUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\HIPGraphsUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\CUDATensorMethods.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\HIPTensorMethods.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\DeviceUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\DeviceUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\jiterator.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\jiterator.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\NumericLimits.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\NumericLimits.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\ScanUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\ScanUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\Sleep.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\Sleep.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\detail\IndexUtils.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\detail\IndexUtils.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\detail\IndexUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\detail\IndexUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\detail\IntegerDivider.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\detail\IntegerDivider.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\detail\OffsetCalculator.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\detail\OffsetCalculator.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\detail\PhiloxCudaStateRaw.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\detail\PhiloxCudaStateRaw.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\detail\TensorInfo.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\detail\TensorInfo.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\cuda\detail\UnpackRaw.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\hip\detail\UnpackRaw.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AbsKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AbsKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationEluKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationEluKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationGeluKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationGeluKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationGluKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationGluKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationHardshrinkKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationHardshrinkKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationHardsigmoidKernel.cu
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationHardsigmoidKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationHardswishKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationHardswishKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationHardtanhKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationHardtanhKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationLeakyReluKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationLeakyReluKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationLogSigmoidKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationLogSigmoidKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationMishKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationMishKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationPreluKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationPreluKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationSiluKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationSiluKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationSoftplusKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationSoftplusKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationSoftshrinkKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationSoftshrinkKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ActivationThresholdKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ActivationThresholdKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AdaptiveAveragePooling.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AdaptiveAveragePooling.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AdaptiveAveragePooling3d.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AdaptiveAveragePooling3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AdaptiveMaxPooling2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AdaptiveMaxPooling2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AdaptiveMaxPooling3d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AdaptiveMaxPooling3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\airy_ai.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\airy_ai.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AmpKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AmpKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AveragePool2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AveragePool2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\AveragePool3d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\AveragePool3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\bessel_j0.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\bessel_j0.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\bessel_j1.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\bessel_j1.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\bessel_y0.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\bessel_y0.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\bessel_y1.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\bessel_y1.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryBitwiseOpsKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryBitwiseOpsKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryDivFloorKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryDivFloorKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryDivTrueKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryDivTrueKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryDivTruncKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryDivTruncKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryGeometricKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryGeometricKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryLogicalOpsKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryLogicalOpsKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryMiscBackwardOpsKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryMiscBackwardOpsKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryMiscOpsKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryMiscOpsKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryMulKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryMulKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryRemainderKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryRemainderKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\BinaryShiftOpsKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\BinaryShiftOpsKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\block_reduce.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\block_reduce.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Bucketization.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Bucketization.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\chebyshev_polynomial_t.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\chebyshev_polynomial_t.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\chebyshev_polynomial_u.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\chebyshev_polynomial_u.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\chebyshev_polynomial_v.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\chebyshev_polynomial_v.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\chebyshev_polynomial_w.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\chebyshev_polynomial_w.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Col2Im.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Col2Im.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CompareEQKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\CompareEQKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CompareKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\CompareKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ComplexKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ComplexKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ConvolutionMM2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ConvolutionMM2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Copy.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Copy.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CopysignKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\CopysignKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CrossKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\CrossKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CUDAJitLoops.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\HIPJitLoops.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CUDALoops.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\HIPLoops.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CUDAScalar.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\HIPScalar.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CumminmaxKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\CumminmaxKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CumprodKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\CumprodKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\CumsumKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\CumsumKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DepthwiseConv2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DepthwiseConv2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DepthwiseConv3d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DepthwiseConv3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DeviceSqrt.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DeviceSqrt.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DilatedMaxPool2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DilatedMaxPool2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DilatedMaxPool3d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DilatedMaxPool3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistanceKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistanceKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionBernoulli.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionBernoulli.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionCauchyKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionCauchyKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionExponentialKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionExponentialKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionGeometricKernel.cu
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionGeometricKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionLogNormalKernel.cu
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionLogNormalKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionNormal.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionNormal.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionRandomKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionRandomKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Distributions.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Distributions.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\DistributionUniform.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\DistributionUniform.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Embedding.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Embedding.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\EmbeddingBackwardKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\EmbeddingBackwardKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\EmbeddingBackwardKernel.cuh 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\EmbeddingBackwardKernel.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\EmbeddingBag.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\EmbeddingBag.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\FillKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\FillKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\FlattenIndicesKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\FlattenIndicesKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachBinaryOpList.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachBinaryOpList.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachBinaryOpScalar.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachBinaryOpScalar.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachBinaryOpScalarList.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachBinaryOpScalarList.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachFunctors.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachFunctors.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachMinMaxFunctors.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachMinMaxFunctors.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachPointwiseOp.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachPointwiseOp.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachReduceOp.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachReduceOp.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachTernaryOp.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachTernaryOp.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ForeachUnaryOp.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ForeachUnaryOp.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\FractionalMaxPool2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\FractionalMaxPool2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\FractionalMaxPool3d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\FractionalMaxPool3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\FunctionOfAMatrixUtilsKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\FunctionOfAMatrixUtilsKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\FusedAdamKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\FusedAdamKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\FusedAdamWKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\FusedAdamWKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adamw_amsgrad_impl.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adamw_amsgrad_impl.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adamw_amsgrad_impl.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adamw_amsgrad_impl.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adamw_impl.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adamw_impl.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adamw_impl.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adamw_impl.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adam_amsgrad_impl.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adam_amsgrad_impl.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adam_amsgrad_impl.cuh 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adam_amsgrad_impl.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adam_impl.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adam_impl.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adam_impl.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adam_impl.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\fused_adam_utils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\fused_adam_utils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\GcdLcmKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\GcdLcmKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\GridSampler.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\GridSampler.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\GridSampler.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\GridSampler.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\group_norm_kernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\group_norm_kernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\hermite_polynomial_h.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\hermite_polynomial_h.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\hermite_polynomial_he.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\hermite_polynomial_he.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\IGammaKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\IGammaKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Im2Col.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Im2Col.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\im2col.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\im2col.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Indexing.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Indexing.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\IndexKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\IndexKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\JitLoops.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\JitLoops.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\KernelUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\KernelUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\laguerre_polynomial_l.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\laguerre_polynomial_l.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\layer_norm_kernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\layer_norm_kernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\LegacyThrustHelpers.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\LegacyThrustHelpers.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\legendre_polynomial_p.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\legendre_polynomial_p.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Lerp.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Lerp.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\LinearAlgebra.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\LinearAlgebra.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\LogAddExpKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\LogAddExpKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\LogcumsumexpKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\LogcumsumexpKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Loops.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Loops.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Loss.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Loss.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\LossCTC.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\LossCTC.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Math.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Math.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\MaxMinElementwiseKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\MaxMinElementwiseKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\MaxUnpooling.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\MaxUnpooling.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\MemoryAccess.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\MemoryAccess.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\modified_bessel_i0.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\modified_bessel_i0.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\modified_bessel_i1.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\modified_bessel_i1.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\modified_bessel_k0.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\modified_bessel_k0.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\modified_bessel_k1.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\modified_bessel_k1.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\MultiLabelMarginCriterion.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\MultiLabelMarginCriterion.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\MultiMarginLoss.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\MultiMarginLoss.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\MultinomialKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\MultinomialKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\MultiTensorApply.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\MultiTensorApply.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\NaiveConvolutionTranspose2d.cu
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\NaiveConvolutionTranspose2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\NaiveConvolutionTranspose3d.cu
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\NaiveConvolutionTranspose3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\NaiveDilatedConvolution.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\NaiveDilatedConvolution.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\NLLLoss2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\NLLLoss2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Nonzero.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Nonzero.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Normalization.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Normalization.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Normalization.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Normalization.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\PersistentSoftmax.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\PersistentSoftmax.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\PointwiseOpsKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\PointwiseOpsKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Pow.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Pow.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\PowKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\PowKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Randperm.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Randperm.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Randperm.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Randperm.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\RangeFactories.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\RangeFactories.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\RecordStream.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\RecordStream.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Reduce.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Reduce.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Reduce.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Reduce.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceAMinMaxKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceAMinMaxKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceArgMaxKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceArgMaxKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceArgMinKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceArgMinKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceLogicKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceLogicKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceMaxValuesKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceMaxValuesKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceMinValuesKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceMinValuesKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceMomentKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceMomentKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceNormKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceNormKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReduceSumProdKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReduceSumProdKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\reduction_template.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\reduction_template.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReflectionPad.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReflectionPad.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\RenormKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\RenormKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Repeat.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Repeat.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ReplicationPadding.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ReplicationPadding.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\RNN.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\RNN.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ROCmLoops.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ROCmLoops.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\RreluWithNoise.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\RreluWithNoise.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\scaled_modified_bessel_k0.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\scaled_modified_bessel_k0.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\scaled_modified_bessel_k1.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\scaled_modified_bessel_k1.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ScanUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ScanUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ScatterGatherKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ScatterGatherKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SegmentReduce.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SegmentReduce.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Shape.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Shape.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_t.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\shifted_chebyshev_polynomial_t.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_u.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\shifted_chebyshev_polynomial_u.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_v.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\shifted_chebyshev_polynomial_v.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\shifted_chebyshev_polynomial_w.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\shifted_chebyshev_polynomial_w.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SoftMax.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SoftMax.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Sort.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Sort.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SortImpl.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SortImpl.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Sorting.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Sorting.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SortingCommon.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SortingCommon.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SortingRadixSelect.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SortingRadixSelect.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SortStable.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SortStable.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SortUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SortUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SparseBinaryOpIntersectionKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SparseBinaryOpIntersectionKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SparseMM.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SparseMM.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SpectralOps.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SpectralOps.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\spherical_bessel_j0.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\spherical_bessel_j0.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\StepKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\StepKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\SummaryOps.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\SummaryOps.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\TensorCompare.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\TensorCompare.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\TensorFactories.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\TensorFactories.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\TensorModeKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\TensorModeKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\TensorModeKernel.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\TensorModeKernel.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\TensorTopK.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\TensorTopK.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\TensorTransformations.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\TensorTransformations.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\TriangularOps.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\TriangularOps.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryComplexKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryComplexKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryFractionKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryFractionKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGammaKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGammaKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricAcoshKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricAcoshKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricAcosKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricAcosKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricAsinhKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricAsinhKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricAsinKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricAsinKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricAtanhKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricAtanhKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricAtanKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricAtanKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricCoshKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricCoshKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricCosKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricCosKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricSinhKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricSinhKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricSinKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricSinKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricTanhKernel.cu 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricTanhKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryGeometricTanKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryGeometricTanKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryLogKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryLogKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnaryOpsKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnaryOpsKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnarySignKernels.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnarySignKernels.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnarySpecialOpsKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnarySpecialOpsKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UnfoldBackwardKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UnfoldBackwardKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\Unique.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\Unique.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UniqueCub.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UniqueCub.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UniqueCub.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UniqueCub.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSample.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSample.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSampleBicubic2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSampleBicubic2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSampleBilinear2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSampleBilinear2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSampleLinear1d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSampleLinear1d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSampleNearest1d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSampleNearest1d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSampleNearest2d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSampleNearest2d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSampleNearest3d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSampleNearest3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\UpSampleTrilinear3d.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\UpSampleTrilinear3d.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ValidateCompressedIndicesKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ValidateCompressedIndicesKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\vol2col.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\vol2col.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\WeightNorm.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\WeightNorm.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\cuda\ZetaKernel.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\hip\ZetaKernel.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\nested\cuda\NestedTensorBinaryOps.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\nested\hip\NestedTensorBinaryOps.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\nested\cuda\NestedTensorMatmul.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\nested\hip\NestedTensorMatmul.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\nested\cuda\NestedTensorTransformerFunctions.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\nested\hip\NestedTensorTransformerFunctions.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\cuda\Activation.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\hip\Activation.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\cuda\AffineQuantizer.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\hip\AffineQuantizer.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\cuda\EmbeddingBag.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\hip\EmbeddingBag.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\cuda\FakeQuantizeCore.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\hip\FakeQuantizeCore.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\cuda\FusedObsFakeQuant.cu
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\hip\FusedObsFakeQuant.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\cuda\IntReprQuant.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\hip\IntReprQuant.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\cuda\MakePerTensorQuantizedTensor.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\quantized\hip\MakePerTensorQuantizedTensor.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\SoftMax.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\SoftMax.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\SparseCsrTensorMath.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\SparseCsrTensorMath.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\SparseCUDAApplyUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\SparseHIPApplyUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\SparseCUDATensor.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\SparseHIPTensor.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\SparseCUDATensorMath.cu
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\SparseHIPTensorMath.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\SparseCUDATensorMath.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\SparseHIPTensorMath.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\SparseMatMul.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\SparseMatMul.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\cuda\StructuredSparseLinearCUTLASS.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\sparse\hip\StructuredSparseLinearCUTLASS.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\attention.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\attention.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\attention_backward.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\attention_backward.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\flash_attn\fmha_bwd_hdim128.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\flash_attn\fmha_bwd_hdim128.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\flash_attn\fmha_bwd_hdim32.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\flash_attn\fmha_bwd_hdim32.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\flash_attn\fmha_bwd_hdim64.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\flash_attn\fmha_bwd_hdim64.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\flash_attn\fmha_fwd_hdim128.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\flash_attn\fmha_fwd_hdim128.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\flash_attn\fmha_fwd_hdim32.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\flash_attn\fmha_fwd_hdim32.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\flash_attn\fmha_fwd_hdim64.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\flash_attn\fmha_fwd_hdim64.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\flash_attn\philox.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\flash_attn\philox.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k128.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k128.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k128_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k128_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k32.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k32.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k32_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k32_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k64.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k64.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k64_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k64_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k65536.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k65536.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k65536_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k65536_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_bf16_aligned_k96.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_bf16_aligned_k96.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k128.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k128.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k128_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k128_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k32.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k32.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k32_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k32_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k64.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k64.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k64_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k64_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k65536.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k65536.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k65536_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k65536_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_aligned_k96.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_aligned_k96.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k128.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k128.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k128_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k128_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k32.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k32.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k32_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k32_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k64.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k64.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k64_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k64_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k65536.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k65536.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f16_notaligned_k65536_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f16_notaligned_k65536_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k128.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k128.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k128_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k128_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k32.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k32.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k32_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k32_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k64.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k64.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k64_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k64_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k65536.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k65536.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_aligned_k65536_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_aligned_k65536_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k128.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k128.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k128_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k128_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k32.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k32.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k32_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k32_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k64.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k64.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k64_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k64_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k65536.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k65536.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassB_f32_notaligned_k65536_dropout.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassB_f32_notaligned_k65536_dropout.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_bf16_aligned.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassF_bf16_aligned.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f16_aligned.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassF_f16_aligned.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f16_notaligned.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassF_f16_notaligned.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f32_aligned.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassF_f32_aligned.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\cuda\mem_eff_attention\kernels\cutlassF_f32_notaligned.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\native\transformers\hip\mem_eff_attention\kernels\cutlassF_f32_notaligned.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_atomic_ops_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_atomic_ops_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_complex_math_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_complex_math_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_complex_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_complex_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_cub_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_cub_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_distributions_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_distributions_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_generator_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_generator_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_half_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_half_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_integer_divider_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_integer_divider_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_optional_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_optional_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_packedtensoraccessor_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_packedtensoraccessor_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\cuda_vectorized_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\ATen\test\hip\hip_vectorized_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\THC\THCAtomics.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\THH\THHAtomics.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\THC\THCDeviceUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\aten\src\THH\THHDeviceUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\binaries\core_overhead_benchmark_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\binaries\hip\core_overhead_benchmark_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\binaries\inspect_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\binaries\hip\inspect_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\binaries\print_core_object_sizes_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\binaries\hip\print_core_object_sizes_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\cuda\test\impl\CUDAAssertionsTest_1_var_test.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\hip\test\impl\HIPAssertionsTest_1_var_test.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\cuda\test\impl\CUDAAssertionsTest_catches_stream.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\hip\test\impl\HIPAssertionsTest_catches_stream.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\cuda\test\impl\CUDAAssertionsTest_catches_thread_and_block_and_device.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\hip\test\impl\HIPAssertionsTest_catches_thread_and_block_and_device.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\cuda\test\impl\CUDAAssertionsTest_from_2_processes.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\hip\test\impl\HIPAssertionsTest_from_2_processes.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\cuda\test\impl\CUDAAssertionsTest_multiple_writes_from_blocks_and_threads.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\hip\test\impl\HIPAssertionsTest_multiple_writes_from_blocks_and_threads.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\cuda\test\impl\CUDAAssertionsTest_multiple_writes_from_multiple_blocks.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\hip\test\impl\HIPAssertionsTest_multiple_writes_from_multiple_blocks.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\cuda\test\impl\CUDAAssertionsTest_multiple_writes_from_same_block.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\c10\hip\test\impl\HIPAssertionsTest_multiple_writes_from_same_block.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\aten\aten_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\aten\hip\aten_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\gloo\allreduce_ops_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\gloo\hip\allreduce_ops_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\gloo\broadcast_ops_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\gloo\hip\broadcast_ops_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\gloo\common_world_ops_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\gloo\hip\common_world_ops_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\nccl\cuda_nccl_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\nccl\hip\hip_nccl_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\nccl\cuda_nccl_gpu.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\nccl\hip\hip_nccl_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\nccl\cuda_nccl_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\contrib\nccl\hip\hip_nccl_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\blob_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\blob_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\blob_serialization_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\blob_serialization_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\common_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\common_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\common_gpu.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\common_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\context_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\context_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\context_gpu.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\context_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\context_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\context_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\event_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\event_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\event_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\event_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\net_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\net_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\operator_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\core\hip\operator_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\db\create_db_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\db\hip\create_db_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\distributed\file_store_handler_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\distributed\hip\file_store_handler_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\distributed\redis_store_handler_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\distributed\hip\redis_store_handler_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\image\image_input_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\image\hip\image_input_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\image\transform_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\image\hip\transform_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\image\transform_gpu.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\image\hip\transform_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\mpi\mpi_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\mpi\hip\mpi_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\abs_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\abs_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\accumulate_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\accumulate_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\accuracy_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\accuracy_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\acos_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\acos_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\affine_channel_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\affine_channel_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\alias_with_name.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\alias_with_name.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\arg_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\arg_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\asin_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\asin_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\assert_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\assert_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\async_net_barrier_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\async_net_barrier_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\atan_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\atan_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\batch_gather_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\batch_gather_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\batch_matmul_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\batch_matmul_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\batch_matmul_op_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\batch_matmul_op_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\batch_moments_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\batch_moments_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\batch_permutation_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\batch_permutation_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\batch_permutation_op_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\batch_permutation_op_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\batch_sparse_to_dense_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\batch_sparse_to_dense_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\boolean_mask_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\boolean_mask_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\boolean_unmask_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\boolean_unmask_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\bucketize_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\bucketize_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\cast_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\cast_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\cbrt_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\cbrt_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\ceil_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\ceil_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\channel_backprop_stats_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\channel_backprop_stats_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\channel_shuffle_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\channel_shuffle_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\channel_stats_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\channel_stats_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\clip_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\clip_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\communicator_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\communicator_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\concat_split_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\concat_split_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\conv_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\conv_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\conv_op_shared_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\conv_op_shared_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\conv_transpose_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\conv_transpose_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\copy_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\copy_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\cosh_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\cosh_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\cosine_embedding_criterion_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\cosine_embedding_criterion_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\cos_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\cos_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\counter_ops_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\counter_ops_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\cross_entropy_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\cross_entropy_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\cube_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\cube_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\data_couple_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\data_couple_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\deform_conv_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\deform_conv_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\distance_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\distance_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\do_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\do_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\dropout_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\dropout_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elementwise_add_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elementwise_add_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elementwise_div_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elementwise_div_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elementwise_linear_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elementwise_linear_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elementwise_mul_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elementwise_mul_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elementwise_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elementwise_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elementwise_op_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elementwise_op_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elementwise_sub_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elementwise_sub_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\elu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\elu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\enforce_finite_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\enforce_finite_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\ensure_cpu_output_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\ensure_cpu_output_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\erf_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\erf_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\expand_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\expand_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\expand_squeeze_dims_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\expand_squeeze_dims_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\exp_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\exp_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\filler_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\filler_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\find_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\find_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\floor_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\floor_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\free_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\free_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\fully_connected_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\fully_connected_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\gather_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\gather_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\gather_op.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\gather_op.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\gelu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\gelu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\generate_proposals_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\generate_proposals_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\generate_proposals_op_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\generate_proposals_op_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\generate_proposals_op_util_nms_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\generate_proposals_op_util_nms_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\generate_proposals_op_util_nms_gpu.h 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\generate_proposals_op_util_nms_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\generate_proposals_op_util_nms_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\generate_proposals_op_util_nms_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\given_tensor_byte_string_to_uint8_fill_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\given_tensor_byte_string_to_uint8_fill_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\given_tensor_fill_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\given_tensor_fill_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\glu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\glu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\group_norm_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\group_norm_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\gru_unit_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\gru_unit_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\half_float_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\half_float_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hard_sigmoid_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\hard_sigmoid_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\if_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\if_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\im2col_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\im2col_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\instance_norm_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\instance_norm_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\integral_image_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\integral_image_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\layer_norm_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\layer_norm_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\leaky_relu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\leaky_relu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\lengths_pad_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\lengths_pad_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\lengths_tile_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\lengths_tile_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\load_save_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\load_save_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\locally_connected_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\locally_connected_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\local_response_normalization_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\local_response_normalization_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\log1p_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\log1p_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\logit_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\logit_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\log_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\log_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\loss_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\loss_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\lpnorm_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\lpnorm_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\lp_pool_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\lp_pool_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\lstm_unit_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\lstm_unit_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\margin_ranking_criterion_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\margin_ranking_criterion_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\matmul_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\matmul_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\max_pool_with_index.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\max_pool_with_index.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\max_pool_with_index_gpu.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\max_pool_with_index_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\mean_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\mean_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\mem_query_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\mem_query_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\minmax_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\minmax_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\mod_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\mod_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\moments_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\moments_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\multi_class_accuracy_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\multi_class_accuracy_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\negate_gradient_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\negate_gradient_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\negative_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\negative_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\normalize_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\normalize_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\one_hot_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\one_hot_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\operator_fallback_gpu.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\operator_fallback_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\operator_fallback_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\operator_fallback_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\order_switch_ops_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\order_switch_ops_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\pack_segments.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\pack_segments.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\pad_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\pad_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\perplexity_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\perplexity_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\piecewise_linear_transform_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\piecewise_linear_transform_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\pool_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\pool_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\pow_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\pow_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\prelu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\prelu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\prepend_dim_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\prepend_dim_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reciprocal_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reciprocal_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reduce_front_back_max_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reduce_front_back_max_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reduce_front_back_sum_mean_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reduce_front_back_sum_mean_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reduce_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reduce_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reduction_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reduction_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\relu_n_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\relu_n_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\relu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\relu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\replace_nan_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\replace_nan_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reshape_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reshape_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reshape_op_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reshape_op_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\resize_3d_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\resize_3d_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\resize_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\resize_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\reverse_packed_segs_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\reverse_packed_segs_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rmac_regions_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\rmac_regions_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rms_norm_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\rms_norm_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\roi_align_gradient_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\roi_align_gradient_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\roi_align_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\roi_align_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\roi_align_op_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\roi_align_op_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\roi_align_rotated_gradient_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\roi_align_rotated_gradient_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\roi_align_rotated_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\roi_align_rotated_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\roi_pool_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\roi_pool_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rsqrt_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\rsqrt_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\scale_blobs_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\scale_blobs_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\scale_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\scale_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\segment_reduction_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\segment_reduction_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\segment_reduction_op_gpu.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\segment_reduction_op_gpu.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\selu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\selu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sequence_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sequence_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\shape_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\shape_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sigmoid_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sigmoid_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sinh_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sinh_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sin_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sin_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\slice_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\slice_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\softmax_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\softmax_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\softplus_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\softplus_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\softsign_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\softsign_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\space_batch_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\space_batch_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sparse_lp_regularizer_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sparse_lp_regularizer_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sparse_normalize_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sparse_normalize_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sparse_to_dense_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sparse_to_dense_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\spatial_batch_norm_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\spatial_batch_norm_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\spatial_batch_norm_op_impl.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\spatial_batch_norm_op_impl.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sqrt_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sqrt_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\sqr_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\sqr_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\stop_gradient_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\stop_gradient_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\stump_func_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\stump_func_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\summarize_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\summarize_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\swish_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\swish_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\tanh_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\tanh_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\tan_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\tan_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\tensor_protos_db_input_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\tensor_protos_db_input_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\thresholded_relu_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\thresholded_relu_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\tile_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\tile_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\top_k.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\top_k.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\top_k_heap_selection.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\top_k_heap_selection.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\top_k_radix_selection.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\top_k_radix_selection.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\transpose_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\transpose_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\unique_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\unique_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\unsafe_coalesce.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\unsafe_coalesce.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\upsample_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\upsample_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\utility_ops.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\utility_ops.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\utility_ops_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\utility_ops_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\weighted_sample_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\weighted_sample_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\while_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\while_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\zero_gradient_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\hip\zero_gradient_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\recurrent_network_blob_fetcher_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\hip\recurrent_network_blob_fetcher_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\recurrent_network_executor_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\hip\recurrent_network_executor_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\recurrent_network_executor_gpu.h 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\hip\recurrent_network_executor_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\recurrent_network_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\operators\rnn\hip\recurrent_network_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\queue\queue_ops_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\queue\hip\queue_ops_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\adadelta_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\adadelta_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\adagrad_fused_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\adagrad_fused_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\adagrad_fused_op_gpu.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\adagrad_fused_op_gpu.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\adagrad_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\adagrad_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\adam_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\adam_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\fp16_momentum_sgd_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\fp16_momentum_sgd_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\fp32_momentum_sgd_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\fp32_momentum_sgd_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\iter_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\iter_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\lars_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\lars_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\learning_rate_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\learning_rate_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\momentum_sgd_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\momentum_sgd_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\rmsprop_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\rmsprop_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\weight_scale_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\weight_scale_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\yellowfin_op_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\sgd\hip\yellowfin_op_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\cub_namespace.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\hip\cub_namespace.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\GpuAtomics.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\hip\GpuAtomics.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\GpuBitonicSort.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\hip\GpuBitonicSort.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\GpuDefs.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\hip\GpuDefs.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\GpuScanUtils.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\hip\GpuScanUtils.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\hip\math_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math_gpu_test.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\hip\math_gpu_test.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\broadcast.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\hip\broadcast.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\elementwise.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\hip\elementwise.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\reduce.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\hip\reduce.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\reduce.cuh 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\hip\reduce.cuh
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\transpose.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\utils\math\hip\transpose.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\video\video_input_op_gpu.cc 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\caffe2\video\hip\video_input_op_gpu.cc
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\group_spatial_softmax_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\group_spatial_softmax_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\ps_roi_pool_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\ps_roi_pool_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\roi_pool_f_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\roi_pool_f_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\sample_as_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\sample_as_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\select_smooth_l1_loss_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\select_smooth_l1_loss_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\sigmoid_cross_entropy_loss_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\sigmoid_cross_entropy_loss_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\sigmoid_focal_loss_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\sigmoid_focal_loss_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\smooth_l1_loss_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\smooth_l1_loss_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\softmax_focal_loss_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\softmax_focal_loss_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\spatial_narrow_as_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\spatial_narrow_as_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\upsample_nearest_op.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\modules\detectron\hip\upsample_nearest_op.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\torch\csrc\distributed\c10d\quantization\quantization_gpu.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\torch\csrc\distributed\c10d\quantization\hip\quantization_gpu.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\torch\csrc\distributed\c10d\quantization\quantization_gpu.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\torch\csrc\distributed\c10d\quantization\hip\quantization_gpu.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\array.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\array.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\array_rocm.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\array_rocm.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\bf16_support.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\bf16_support.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\bf16_support_rocm.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\bf16_support_rocm.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\block_sync_default.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\block_sync_default.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\fp16_support.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\fp16_support.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\fused_reduction.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\fused_reduction.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\fused_welford_helper.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\fused_welford_helper.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\fused_welford_impl.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\fused_welford_impl.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\grid_broadcast.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\grid_broadcast.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\grid_sync.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\grid_sync.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\index_utils.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\index_utils.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\memory.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\memory.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\random_numbers.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\random_numbers.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\swizzle.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\swizzle.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\tensor.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\tensor.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\tensorcore.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\tensorcore.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\tuple.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\tuple.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\type_traits.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\type_traits.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\warp.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\warp.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\warp_rocm.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\warp_rocm.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\welford.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\runtime\hip\welford.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu1.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu1.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu2.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu2.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu3.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu3.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_fused_reduction.cpp 
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_fused_reduction.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_rng.cu 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_rng.hip
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_shift.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_shift.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_tensorcore.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_tensorcore.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_tensor_factories.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_tensor_factories.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_transpose.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_transpose.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_utils.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_utils.cpp
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_validator.h 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_validator.h
+C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\test_gpu_view.cpp 
+ C:\Users\zhaoyili\OneDrive - Advanced Micro Devices Inc\Desktop\ai4amd\data_gen\pytorch\third_party\nvfuser\test\hip\test_gpu_view.cpp
+←[92mSuccessfully preprocessed all matching files.←[0m
