@@ -1,0 +1,170 @@
+
+
+
+#include "core/providers/shared_library/provider_api.h"
+#include "core/providers/rocm/reduction/reduction_functions.h"
+
+#include <algorithm>
+#include <cassert>
+#include <iterator>
+#include <utility>
+
+#include "core/common/optional.h"
+#include "core/framework/tensor_shape.h"
+
+namespace onnxruntime {
+namespace rocm {
+
+namespace {
+
+
+optional<std::pair<int64_t, int64_t>> GetMinAndMaxContiguousAxes(
+  int64_t rank, const std::vector<int64_t>& dims, const std::vector<int64_t>& original_axes) {
+ assert(rank == static_cast<int64_t>(dims.size()));
+
+ 
+ if (original_axes.empty()) {
+  return std::make_pair(int64_t{0}, rank - 1);
+ }
+
+ 
+ const std::vector<int64_t> axes = [&original_axes, rank]() {
+  std::vector<int64_t> result(original_axes);
+  std::for_each(
+    result.begin(), result.end(), [rank](int64_t& axis) { axis = HandleNegativeAxis(axis, rank); });
+  std::sort(result.begin(), result.end());
+  return result;
+ }();
+
+ assert(!axes.empty());
+
+ const auto is_dim_one = [](int64_t dim) { return dim == 1; };
+
+ for (auto a = axes.begin(), b = axes.begin() + 1;
+    b != axes.end();
+    ++a, ++b) {
+  ORT_ENFORCE(*a != *b, "axes must not contain duplicate values");
+
+  
+  if (*a + 1 == *b) {
+   continue;
+  }
+
+  
+  
+  if (std::all_of(dims.begin() + *a + 1, dims.begin() + *b, is_dim_one)) {
+   continue;
+  }
+
+  
+  return nullopt;
+ }
+
+ 
+ const int64_t min_axis = [&dims, &axes, &is_dim_one]() -> int64_t {
+  const auto& min_given_axis = axes.front();
+  
+  
+  const auto before_min_given_axis_rit =
+    std::make_reverse_iterator(dims.begin() + min_given_axis);
+  const auto before_min_axis_rit =
+    std::find_if_not(before_min_given_axis_rit, dims.rend(), is_dim_one);
+  
+  return std::distance(dims.begin(), before_min_axis_rit.base());
+ }();
+
+ const int64_t max_axis = [&dims, &axes, &is_dim_one]() {
+  const auto& max_given_axis = axes.back();
+  const auto after_max_given_axis_it = dims.begin() + max_given_axis + 1;
+  const auto after_max_axis_it =
+    std::find_if_not(after_max_given_axis_it, dims.end(), is_dim_one);
+  return std::distance(dims.begin(), after_max_axis_it - 1);
+ }();
+
+ return std::make_pair(min_axis, max_axis);
+}
+} 
+
+ApplicableMatrixReduction get_applicable_matrix_reduction(
+  const miopenReduceTensorOp_t miopen_reduce_op, gsl::span<const int64_t> dims, gsl::span<const int64_t> original_axes, int& m_out, int& n_out) {
+ if (miopen_reduce_op != MIOPEN_REDUCE_TENSOR_ADD && miopen_reduce_op != MIOPEN_REDUCE_TENSOR_AVG) {
+  return ApplicableMatrixReduction::None;
+ }
+
+ 
+ 
+ std::vector<int64_t> new_dims;
+ std::vector<int64_t> new_axes;
+ const auto original_rank = gsl::narrow<int64_t>(dims.size());
+ std::set<int64_t> original_axes_set;
+ for (const auto axis : original_axes) {
+  original_axes_set.insert(HandleNegativeAxis(axis, original_rank));
+ }
+
+ int64_t new_axis = 0;
+ for (size_t i = 0; i < dims.size(); i++) {
+  if (dims[i] != 1) {
+   new_dims.emplace_back(dims[i]);
+   if (original_axes_set.find(gsl::narrow<int64_t>(i)) != original_axes_set.end()) {
+    new_axes.emplace_back(new_axis);
+   }
+   new_axis++;
+  }
+ }
+
+ 
+ 
+ if (!original_axes.empty() && new_axes.empty()) {
+  new_dims.emplace_back(1);
+  new_axes.emplace_back(new_axis);
+ }
+
+ 
+ if (!dims.empty() && new_dims.empty()) {
+  new_dims.emplace_back(1);
+ }
+
+ const auto rank = gsl::narrow<int64_t>(new_dims.size());
+ const auto min_and_max_axes = GetMinAndMaxContiguousAxes(rank, new_dims, new_axes);
+ if (!min_and_max_axes.has_value()) {
+  return ApplicableMatrixReduction::None;
+ }
+
+ const auto& min_axis = min_and_max_axes->first;
+ const auto& max_axis = min_and_max_axes->second;
+
+ 
+ 
+ const bool axes_from_beginning = min_axis == 0;
+ const bool axes_to_end = max_axis == rank - 1;
+
+ 
+ if (!axes_from_beginning && !axes_to_end) {
+  return ApplicableMatrixReduction::None;
+ }
+
+ 
+ const int64_t m_end_axis = axes_from_beginning ? max_axis + 1 : min_axis;
+
+ const auto shape = TensorShape::FromExistingBuffer(new_dims);
+
+ const auto m = shape.SizeToDimension(m_end_axis);
+ const auto n = shape.SizeFromDimension(m_end_axis);
+
+ ORT_ENFORCE(m > 0 && n > 0, "shape must not have negative dimensions: ", shape);
+
+ if (m > std::numeric_limits<int>::max() ||
+   n > std::numeric_limits<int>::max()) {
+  return ApplicableMatrixReduction::None;
+ }
+
+ m_out = gsl::narrow_cast<int>(m);
+ n_out = gsl::narrow_cast<int>(n);
+
+ return axes_from_beginning
+       ? ApplicableMatrixReduction::Rows
+       : ApplicableMatrixReduction::Columns;
+}
+
+} 
+} 

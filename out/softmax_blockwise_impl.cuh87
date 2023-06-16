@@ -1,0 +1,297 @@
+#include "hip/hip_runtime.h"
+
+
+
+
+
+#pragma once
+#include "core/providers/rocm/cu_inc/common.cuh"
+
+namespace onnxruntime {
+namespace rocm {
+
+const int max_threads = 1024;
+
+dim3 SoftMax_getBlockSize(int ILP, uint64_t dim_size) {
+ uint64_t block_size = 1;
+ uint64_t max_block_size = std::min(dim_size / ILP, static_cast<uint64_t>(max_threads));
+
+ 
+ 
+ 
+ 
+ 
+ if (ILP > 1) {
+  max_block_size /= 2;
+ }
+
+ while (block_size < (max_block_size)) block_size *= 2;
+ 
+ block_size = std::max(block_size, static_cast<uint64_t>(GPU_WARP_SIZE_HOST));
+ return dim3(static_cast<unsigned int>(block_size));
+}
+
+
+
+
+
+template <typename T, typename AccumT>
+struct MaxFloat {
+ __device__ __forceinline__ AccumT operator()(AccumT max, T v) const {
+  return ::max(max, (AccumT)v);
+ }
+};
+
+template <typename T, typename AccumT>
+struct AddFloat {
+ __device__ __forceinline__ AccumT operator()(AccumT sum, T v) const {
+  return sum + (AccumT)v;
+ }
+};
+
+template <typename T, typename AccumT>
+struct SumExpFloat {
+ __device__ __forceinline__ SumExpFloat(AccumT v)
+   : max_k(v) {}
+
+ __device__ __forceinline__ AccumT operator()(AccumT sum, T v) const {
+  return sum + expf((AccumT)v - max_k);
+ }
+
+ const AccumT max_k;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+template <template <typename> class Reduction, typename AccumT>
+__device__ __forceinline__ AccumT blockReduce(AccumT* smem, AccumT val, const Reduction<AccumT>& r, AccumT defaultVal) {
+ 
+ __syncthreads();
+
+ smem[threadIdx.x] = val;
+
+ __syncthreads();
+
+ AccumT warpVal = defaultVal;
+
+ 
+ if (threadIdx.x < GPU_WARP_SIZE) {
+  int warps_per_block = blockDim.x / GPU_WARP_SIZE;
+  for (int i = 0; i < warps_per_block; ++i) {
+   warpVal = r(warpVal, smem[i * GPU_WARP_SIZE + threadIdx.x]);
+  }
+  smem[threadIdx.x] = warpVal;
+ }
+
+ __syncthreads();
+
+ 
+ AccumT blockVal = defaultVal;
+
+ if (threadIdx.x == 0) {
+  #pragma unroll
+  for (int i = 0; i < GPU_WARP_SIZE; ++i) {
+   blockVal = r(blockVal, smem[i]);
+  }
+  smem[0] = blockVal;
+ }
+
+ 
+ __syncthreads();
+ return smem[0];
+}
+
+template <template <typename, typename> class Reduction, int ILP, typename T, typename AccumT>
+__device__ __forceinline__ AccumT ilpReduce(int shift, T* data, int size, const Reduction<T, AccumT>& r, AccumT defaultVal) {
+ using LoadT = aligned_vector<T, ILP>;
+ AccumT threadVal = defaultVal;
+ int offset = threadIdx.x;
+
+ 
+ if (shift > 0) {
+  data -= shift;
+  size += shift;
+  if (threadIdx.x >= shift && threadIdx.x < size) {
+   threadVal = r(threadVal, data[offset]);
+  }
+  size -= blockDim.x;
+  data += blockDim.x;
+ }
+
+ if (size <= 0) return threadVal;
+
+ int last = size % (ILP * blockDim.x);
+
+ T v[ILP];
+ LoadT* value = reinterpret_cast<LoadT*>(&v);
+
+ for (; offset * ILP < (size - last); offset += blockDim.x) {
+  *value = reinterpret_cast<LoadT*>(data)[offset];
+
+  #pragma unroll
+  for (int j = 0; j < ILP; ++j) {
+   threadVal = r(threadVal, v[j]);
+  }
+ }
+
+ offset = size - last + threadIdx.x;
+ 
+ for (; offset < size; offset += blockDim.x)
+  threadVal = r(threadVal, data[offset]);
+
+ return threadVal;
+}
+
+
+template <int ILP, typename scalar_t, typename accum_t, typename outscalar_t, template <typename, typename, typename> class Epilogue>
+__device__ __forceinline__ void WriteFpropResultsVectorized(int size, const int shift, scalar_t* input, outscalar_t* output, Epilogue<scalar_t, accum_t, outscalar_t> epilogue) {
+ using LoadT = aligned_vector<scalar_t, ILP>;
+ using StoreT = aligned_vector<outscalar_t, ILP>;
+
+ int offset = threadIdx.x;
+
+ 
+ if (shift > 0) {
+  input -= shift;
+  output -= shift;
+  size += shift;
+
+  if (threadIdx.x >= shift && threadIdx.x < size) {
+   output[offset] = epilogue(input[offset]);
+  }
+  size -= blockDim.x;
+  input += blockDim.x;
+  output += blockDim.x;
+ }
+
+ if (size <= 0) return;
+
+ const int last = size % (ILP * blockDim.x);
+
+ scalar_t in_v[ILP];
+ LoadT* in_value = reinterpret_cast<LoadT*>(&in_v);
+
+ outscalar_t out_v[ILP];
+ StoreT* out_value = reinterpret_cast<StoreT*>(&out_v);
+
+ for (; offset * ILP < (size - last); offset += blockDim.x) {
+  *in_value = reinterpret_cast<LoadT*>(input)[offset];
+
+  #pragma unroll
+  for (int j = 0; j < ILP; ++j) {
+   out_v[j] = epilogue(in_v[j]);
+  }
+
+  reinterpret_cast<StoreT*>(output)[offset] = *out_value;
+ }
+
+ offset = size - last + threadIdx.x;
+ 
+ for (; offset < size; offset += blockDim.x) {
+  output[offset] = epilogue(input[offset]);
+ }
+}
+
+
+template <int ILP, typename scalar_t, typename accum_t, typename outscalar_t, template <typename, typename, typename> class Epilogue>
+__device__ __forceinline__ void WriteFpropResults(int classes, scalar_t* input, outscalar_t* output, Epilogue<scalar_t, accum_t, outscalar_t> epilogue) {
+ int offset = threadIdx.x;
+
+ int last = classes % (ILP * blockDim.x);
+
+ 
+ for (; offset < classes - last; offset += blockDim.x * ILP) {
+  scalar_t tmp[ILP];
+
+  #pragma unroll
+  for (int j = 0; j < ILP; ++j) {
+   tmp[j] = input[offset + j * blockDim.x];
+  }
+  #pragma unroll
+  for (int j = 0; j < ILP; ++j) {
+   output[offset + j * blockDim.x] = epilogue(tmp[j]);
+  }
+ }
+
+ 
+ for (; offset < classes; offset += blockDim.x) {
+  output[offset] = epilogue(input[offset]);
+ }
+}
+
+template <int ILP, typename scalar_t, typename accscalar_t, typename outscalar_t, template <typename, typename, typename> class Epilogue>
+__global__ void softmax_block_forward(outscalar_t* output, scalar_t* input, int classes, int input_stride, int output_stride) {
+ extern __shared__ unsigned char smem[];
+ auto sdata = reinterpret_cast<accscalar_t*>(smem);
+
+ 
+ 
+ input += blockIdx.x * input_stride;
+ output += blockIdx.x * output_stride;
+
+ const int input_align_bytes = ILP * sizeof(scalar_t);
+ const int output_align_bytes = ILP * sizeof(outscalar_t);
+
+ const int shift = ((uint64_t)input) % input_align_bytes / sizeof(scalar_t);
+ const int output_shift = ((uint64_t)output) % output_align_bytes / sizeof(outscalar_t);
+
+ 
+ accscalar_t threadMax = ilpReduce<MaxFloat, ILP, scalar_t, accscalar_t>(
+   shift, input, classes, MaxFloat<scalar_t, accscalar_t>(), -std::numeric_limits<accscalar_t>::max());
+ accscalar_t max_k = blockReduce<Max, accscalar_t>(
+   sdata, threadMax, Max<accscalar_t>(), -std::numeric_limits<accscalar_t>::max());
+
+ 
+ accscalar_t threadExp = ilpReduce<SumExpFloat, ILP, scalar_t, accscalar_t>(
+   shift, input, classes, SumExpFloat<scalar_t, accscalar_t>(max_k), static_cast<accscalar_t>(0));
+ accscalar_t sumAll = blockReduce<Add, accscalar_t>(
+   sdata, threadExp, Add<accscalar_t>(), static_cast<accscalar_t>(0));
+
+ Epilogue<scalar_t, accscalar_t, outscalar_t> epilogue(max_k, sumAll);
+
+ if (shift == output_shift) {
+  WriteFpropResultsVectorized<ILP, scalar_t, accscalar_t, outscalar_t, Epilogue>(classes, shift, input, output, epilogue);
+ } else {
+  WriteFpropResults<ILP, scalar_t, accscalar_t, outscalar_t, Epilogue>(classes, input, output, epilogue);
+ }
+}
+
+template <typename T, typename AccumT, typename OutT>
+struct LogSoftMaxForwardEpilogue {
+ __device__ __forceinline__ LogSoftMaxForwardEpilogue(AccumT max_input, AccumT sum)
+   : max_input(max_input), logsum(logf(sum)) {}
+
+ __device__ __forceinline__ OutT operator()(T input) const {
+  return static_cast<OutT>((AccumT)input - max_input - logsum);
+ }
+
+ const AccumT max_input;
+ const AccumT logsum;
+};
+
+template <typename T, typename AccumT, typename OutT>
+struct SoftMaxForwardEpilogue {
+ __device__ __forceinline__ SoftMaxForwardEpilogue(AccumT max_input, AccumT sum)
+   : max_input(max_input), sum(sum) {}
+
+ __device__ __forceinline__ OutT operator()(T input) const {
+  return static_cast<OutT>(expf((AccumT)input - max_input) / sum);
+ }
+
+ const AccumT max_input;
+ const AccumT sum;
+};
+
+} 
+} 

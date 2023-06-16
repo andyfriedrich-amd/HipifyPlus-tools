@@ -1,0 +1,242 @@
+
+
+
+#if defined(ORT_USE_NCCL) || defined(USE_MPI)
+
+#include "orttraining/training_ops/rocm/communication/recv.h"
+#include "orttraining/training_ops/communication_common.h"
+#include "orttraining/training_ops/rocm/communication/nccl_service.h"
+#include "core/providers/rocm/nvtx_profile.h"
+#include "core/providers/rocm/nvtx_profile_context.h"
+#include "core/providers/rocm/rocm_check_memory.h"
+#include "core/providers/rocm/rocm_common.h"
+
+#include "orttraining/core/framework/communication/mpi/mpi_include.h"
+#include "orttraining/core/framework/communication/mpi/mpi_context.h"
+
+namespace onnxruntime {
+namespace rocm {
+
+void Recv::ReceiveData(
+  const int num_tensors, std::vector<Tensor*> received_tensors, const int src, const size_t aggregated_aligned_tensor_bytes, OpKernelContext* context, IAllocatorUniquePtr<char>& buffer) const {
+#ifdef ENABLE_NVTX_PROFILE
+ auto& profile_context = profile::Context::GetInstance();
+ const auto tag = profile_context.GetThreadTagOrDefault(std::this_thread::get_id());
+
+ profile::NvtxRangeCreator recvRange(
+   "Batch-" + tag +
+     " Recv-" + std::to_string(src), profile::Color::Green);
+ 
+ 
+ 
+ recvRange.Begin();
+#endif
+
+#if defined(ORT_USE_NCCL) && defined(USE_NCCL_P2P)
+ buffer = GetScratchBuffer<char>(aggregated_aligned_tensor_bytes, context->GetComputeStream());
+#else
+ buffer = AllocateBufferOnCPUPinned<char>(static_cast<size_t>(aggregated_aligned_tensor_bytes));
+#endif
+
+ CommInfo_t info_data{buffer.get(), static_cast<int>(aggregated_aligned_tensor_bytes), src, static_cast<int>(tag_)};
+
+
+
+#if defined(ORT_USE_NCCL) && defined(USE_NCCL_P2P)
+#ifndef NDEBUG
+ CheckIfMemoryOnCurrentGpuDevice(info_data.buffer);
+#endif
+ auto& nccl_service = rocm::NcclService::GetInstance();
+ nccl_service.SubmitRecvAndWait(info_data.buffer, info_data.size, info_data.rank);
+#elif defined(use_mpi)
+ MPI_CHECK(MPI_Recv(
+   info_data.buffer, info_data.size, MPI_CHAR, info_data.rank, info_data.tag, MPI_COMM_WORLD, MPI_STATUS_IGNORE));
+#else
+ ORT_THROW("Failed to recv from rank: ", info_data.rank);
+#endif
+
+#ifdef ENABLE_NVTX_PROFILE
+ 
+ recvRange.End();
+#endif
+
+#ifdef ENABLE_NVTX_PROFILE
+ profile::NvtxRangeCreator memcpyRange(
+   "Batch-" + tag +
+     " RecvMemcpy-" + std::to_string(src), profile::Color::Green);
+ 
+ memcpyRange.Begin();
+#endif
+
+ 
+ size_t tensor_offset_in_bytes = 0;
+ for (int i = 0; i < num_tensors; ++i) {
+  Tensor* tensor = received_tensors[i];
+
+  
+  tensor_offset_in_bytes = GetAggregatedAlignedAddress(tensor_offset_in_bytes);
+
+  assert(tensor_offset_in_bytes + tensor->SizeInBytes() <= aggregated_aligned_tensor_bytes);
+  
+#if defined(ORT_USE_NCCL) && defined(USE_NCCL_P2P)
+  HIP_CALL_THROW(hipMemcpyAsync(tensor->MutableDataRaw(), buffer.get() + tensor_offset_in_bytes, tensor->SizeInBytes(), hipMemcpyDeviceToDevice, Stream(context)));
+#else
+  HIP_CALL_THROW(hipMemcpyAsync(tensor->MutableDataRaw(), buffer.get() + tensor_offset_in_bytes, tensor->SizeInBytes(), hipMemcpyHostToDevice, Stream(context)));
+#endif
+
+#ifndef NDEBUG
+  
+  
+  CheckIfMemoryOnCurrentGpuDevice(tensor->DataRaw());
+#endif
+  tensor_offset_in_bytes += tensor->SizeInBytes();
+ }
+ assert(tensor_offset_in_bytes == aggregated_aligned_tensor_bytes);
+
+#if defined(ORT_USE_NCCL) && defined(USE_NCCL_P2P)
+#else
+ AddDeferredReleaseCPUPtr(buffer.release(), context->GetComputeStream());
+#endif
+
+#ifdef ENABLE_NVTX_PROFILE
+ 
+ memcpyRange.End();
+#endif
+}
+
+ONNX_OPERATOR_KERNEL_EX(
+  Recv, kMSDomain, 1, kRocmExecutionProvider, (*KernelDefBuilder::Create())
+    .InputMemoryType(OrtMemTypeCPUInput, 0)  
+    .InputMemoryType(OrtMemTypeCPUInput, 1)  
+    .OutputMemoryType(OrtMemTypeCPUOutput, 0) 
+    .TypeConstraint("TBool", DataTypeImpl::GetTensorType<bool>())
+    .TypeConstraint("TInt64", DataTypeImpl::GetTensorType<int64_t>())
+    .TypeConstraint("V", DataTypeImpl::AllFixedSizeTensorTypes()), Recv);
+
+Status Recv::ComputeInternal(OpKernelContext* ctx) const {
+ 
+ const Tensor* input_signal_tensor = ctx->Input<Tensor>(0);
+ const bool* input_signal = input_signal_tensor->template Data<bool>();
+ ORT_ENFORCE(*input_signal, "Input control signal of Recv must be true before executing the node.");
+
+ 
+ const Tensor* remote_rank_tensor = ctx->Input<Tensor>(1);
+ const int64_t* remote_rank = remote_rank_tensor->template Data<int64_t>();
+ const int src = static_cast<int>(*remote_rank);
+
+#ifdef ENABLE_NVTX_PROFILE
+ auto& profile_context = profile::Context::GetInstance();
+ const auto tag = profile_context.GetThreadTagOrDefault(std::this_thread::get_id());
+
+ profile::NvtxRangeCreator preRange(
+   "Batch-" + tag +
+     " PreRecv-" + std::to_string(src), profile::Color::Green);
+ 
+ preRange.Begin();
+#endif
+
+ 
+ int world_rank;
+#ifdef USE_MPI
+ MPI_CHECK(MPI_Comm_rank(MPI_COMM_WORLD, &world_rank));
+#endif
+ ORT_ENFORCE(world_rank != src, "Receive data from rank ", src, " on the rank ", world_rank, ".");
+
+ const int num_tensors = static_cast<int>(element_types_.size());
+ std::vector<size_t> tensor_sizes_in_bytes;
+ std::vector<TensorShape> tensor_shapes;
+ 
+ 
+ size_t aggregated_aligned_tensor_bytes = 0;
+ std::vector<size_t> prefix_tensor_shape_sizes;
+ std::vector<int64_t> aggregated_tensor_shapes;
+ 
+ std::vector<size_t> tensor_offsets_in_bytes;
+
+ 
+ bool all_shapes_inferred = true;
+ 
+ for (int i = 0; i < num_tensors; ++i) {
+  TensorShape inferred_shape;
+  
+  auto shape_inferred = ctx->TryGetInferredOutputShape(i + 1, inferred_shape);
+  if (!shape_inferred) {
+   all_shapes_inferred = false;
+   break;
+  }
+ }
+
+ std::vector<Tensor*> received_tensors(num_tensors);
+ if (all_shapes_inferred) {
+  
+  for (int i = 0; i < num_tensors; ++i) {
+   TensorShape inferred_shape;
+   
+   ORT_ENFORCE(ctx->TryGetInferredOutputShape(i + 1, inferred_shape));
+   
+   
+   received_tensors[i] = ctx->Output(i + 1, inferred_shape);
+  }
+
+  GetTensorShapesAndSizes(
+    false, 1, num_tensors, ctx, tensor_sizes_in_bytes, tensor_shapes);
+
+  
+  
+  
+  ComputeShapeRelatedInfo(
+    tensor_sizes_in_bytes, tensor_shapes, aggregated_aligned_tensor_bytes, prefix_tensor_shape_sizes, aggregated_tensor_shapes, tensor_offsets_in_bytes);
+ } else {
+#ifdef USE_MPI
+  ReceiveShapeInfo(
+    src, tag_, num_tensors, aggregated_aligned_tensor_bytes, prefix_tensor_shape_sizes, aggregated_tensor_shapes);
+#else
+  ORT_THROW("ORT must be built with MPI to send shape info.");
+#endif
+
+  
+  
+  size_t begin = 0;
+  for (int i = 0; i < num_tensors; ++i) {
+   TensorShapeVector tensor_shape(aggregated_tensor_shapes.begin() + begin, aggregated_tensor_shapes.begin() + prefix_tensor_shape_sizes[i]);
+   received_tensors[i] = ctx->Output(i + 1, tensor_shape);
+   
+   begin = prefix_tensor_shape_sizes[i];
+  }
+ }
+
+#ifdef ENABLE_NVTX_PROFILE
+ 
+ 
+ preRange.End();
+#endif
+
+ 
+ 
+ 
+ IAllocatorUniquePtr<char> buffer;
+ ReceiveData(num_tensors, received_tensors, src, aggregated_aligned_tensor_bytes, ctx, buffer);
+
+#ifdef ENABLE_NVTX_PROFILE
+ profile::NvtxRangeCreator postRange(
+   "Batch-" + tag +
+     " PostRecv-" + std::to_string(src), profile::Color::Green);
+ postRange.Begin();
+#endif
+
+ 
+ Tensor* output_signal_tensor = ctx->Output(0, {});
+ bool* output_signal = output_signal_tensor->template MutableData<bool>();
+ *output_signal = true;
+
+#ifdef ENABLE_NVTX_PROFILE
+ postRange.End();
+#endif
+
+ return Status::OK();
+}
+
+} 
+} 
+
+#endif

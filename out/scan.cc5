@@ -1,0 +1,100 @@
+
+
+
+#include "core/providers/shared_library/provider_api.h"
+#include "core/providers/cuda/controlflow/scan.h"
+
+#include "core/providers/cuda/cuda_common.h"
+#include "core/providers/cuda/tensor/transpose.h"
+#include "core/framework/ort_value.h"
+
+
+#include "core/framework/ort_value_tensor_slicer.cc"
+
+using namespace ONNX_NAMESPACE;
+using namespace onnxruntime::common;
+
+namespace onnxruntime {
+namespace cuda {
+
+template <>
+Scan<8>::Scan(const OpKernelInfo& info) : onnxruntime::Scan<8>(info) {
+ scan::detail::DeviceHelpers helpers;
+
+ helpers.set_data_to_zero_func = [](void* data, size_t size_in_bytes) -> Status {
+  CUDA_RETURN_IF_ERROR(cudaMemset(data, 0, size_in_bytes));
+  return Status::OK();
+ };
+
+ 
+ SetDeviceHelpers(helpers);
+}
+
+template <>
+Scan<9>::Scan(const OpKernelInfo& info) : onnxruntime::Scan<9>(info) {
+ scan::detail::DeviceHelpers helpers;
+
+ helpers.transpose_func = [this](const gsl::span<const size_t>& permutations, const Tensor& input, Tensor& output, Stream* stream) {
+  
+  
+  const OpKernelInfo& info = OpKernel::Info();
+  Transpose transpose_kernel = cuda::Transpose(info);
+  return cuda::Transpose::DoTranspose(transpose_kernel, stream, permutations, input, output);
+ };
+
+ 
+ SetDeviceHelpers(helpers);
+}
+
+template <>
+Status Scan<8>::Compute(OpKernelContext* ctx) const {
+ 
+ 
+ 
+ 
+ 
+ auto status = onnxruntime::Scan<8>::Compute(ctx);
+ return status;
+}
+
+template <>
+Status Scan<9>::Compute(OpKernelContext* ctx) const {
+ 
+ 
+ 
+ 
+ 
+ auto status = onnxruntime::Scan<9>::Compute(ctx);
+ return status;
+}
+
+ONNX_OPERATOR_VERSIONED_KERNEL_EX(Scan, kOnnxDomain, 8, 8, kCudaExecutionProvider, (*KernelDefBuilder::Create())
+                   .InputMemoryType(OrtMemTypeCPUInput, 0) 
+                   .TypeConstraint("I", DataTypeImpl::GetTensorType<int64_t>())
+                   .TypeConstraint("V", DataTypeImpl::AllTensorTypes()), Scan<8>);
+
+ONNX_OPERATOR_VERSIONED_KERNEL_EX(Scan, kOnnxDomain, 9, 10, kCudaExecutionProvider, (*KernelDefBuilder::Create())
+                   
+                   
+                   .TypeConstraint("V", DataTypeImpl::AllFixedSizeTensorTypes()), Scan<9>);
+
+
+ONNX_OPERATOR_VERSIONED_KERNEL_EX(Scan, kOnnxDomain, 11, 15, kCudaExecutionProvider, (*KernelDefBuilder::Create())
+                   
+                   
+                   .TypeConstraint("V", DataTypeImpl::AllFixedSizeTensorTypes()), Scan<9>);
+
+
+ONNX_OPERATOR_VERSIONED_KERNEL_EX(Scan, kOnnxDomain, 16, 18, kCudaExecutionProvider, (*KernelDefBuilder::Create())
+                   
+                   
+                   .TypeConstraint("V", DataTypeImpl::AllFixedSizeTensorTypes()), Scan<9>);
+
+
+ONNX_OPERATOR_KERNEL_EX(Scan, kOnnxDomain, 19, kCudaExecutionProvider, (*KernelDefBuilder::Create())
+              
+              
+              .TypeConstraint("V", DataTypeImpl::AllFixedSizeTensorTypesIRv9()), Scan<9>);
+
+} 
+} 

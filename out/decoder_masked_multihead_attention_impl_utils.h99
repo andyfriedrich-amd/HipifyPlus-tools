@@ -1,0 +1,156 @@
+
+
+
+
+
+
+
+
+#pragma once
+
+#include "contrib_ops/cuda/bert/utils.cuh"
+
+using namespace onnxruntime::cuda;
+
+namespace onnxruntime {
+namespace contrib {
+namespace cuda {
+namespace decoder_masked_self_attention_details {
+
+
+
+
+
+template <int WARPS_PER_BLOCK, int WARP_SIZE = 32>
+inline __device__ float block_sum(float* red_smem, float sum) {
+ 
+ int warp = threadIdx.x / WARP_SIZE;
+ int lane = threadIdx.x % WARP_SIZE;
+
+ 
+#pragma unroll
+ for (int mask = WARP_SIZE / 2; mask >= 1; mask /= 2) {
+  sum += __shfl_xor_sync(uint32_t(-1), sum, mask);
+ }
+
+ 
+ if (lane == 0) {
+  red_smem[warp] = sum;
+ }
+
+ 
+ __syncthreads();
+
+ 
+ if (lane < WARPS_PER_BLOCK) {
+  sum = red_smem[lane];
+ }
+
+ 
+#pragma unroll
+ for (int mask = WARPS_PER_BLOCK / 2; mask >= 1; mask /= 2) {
+  sum += __shfl_xor_sync(uint32_t(-1), sum, mask);
+ }
+
+ 
+ return __shfl_sync(uint32_t(-1), sum, 0);
+}
+
+
+
+
+
+inline __device__ constexpr uint32_t shfl_mask(int threads) {
+ return threads == 32 ? uint32_t(-1) : (1u << threads) - 1u;
+}
+
+
+
+
+
+template <typename T>
+inline __device__ float dot(T a, T b) {
+ return sum(mul<T, T, T>(a, b));
+}
+
+template <typename A, typename T>
+inline __device__ float dot(T a, T b) {
+ return sum(mul<A, T, T>(a, b));
+}
+
+
+
+
+
+template <int THREADS_PER_KEY, typename K_vec, int N>
+inline __device__ float qk_dot_(const K_vec (&q)[N], const K_vec (&k)[N]) {
+ using K_vec_acum = K_vec;
+
+ 
+ K_vec_acum qk_vec = mul<K_vec_acum, K_vec, K_vec>(q[0], k[0]);
+#pragma unroll
+ for (int ii = 1; ii < N; ++ii) {
+  qk_vec = onnxruntime::cuda::fma(q[ii], k[ii], qk_vec);
+ }
+
+ 
+ float qk = sum(qk_vec);
+#pragma unroll
+ for (int mask = THREADS_PER_KEY / 2; mask >= 1; mask /= 2) {
+  qk += __shfl_xor_sync(uint32_t(-1), qk, mask);
+ }
+ return qk;
+}
+
+template <typename T, int THREADS_PER_KEY>
+struct Qk_dot {
+ template <typename K_vec, int N>
+ static inline __device__ float dot(const K_vec (&q)[N], const K_vec (&k)[N]) {
+  return qk_dot_<THREADS_PER_KEY>(q, k);
+ }
+};
+
+
+
+
+
+template <typename T, int head_size>
+struct ThreadsPerValue {
+ static const int value = head_size * sizeof(T) / 16;
+};
+
+
+
+
+
+template <typename T>
+inline size_t CalcDynamicBlockMemory(const DecoderMaskedMultiHeadAttentionParams& params, int threads_per_value, int threads_per_block) {
+ 
+
+ const int total_sequence_length = params.total_sequence_length;
+ size_t qk_sz = (((total_sequence_length + 3) / 4) * 16);
+
+ 
+ size_t logits_sz = 0;
+
+ if (sizeof(T) != 4) {
+  logits_sz = (((total_sequence_length + 3) / 4) * 4 * sizeof(T));
+ }
+
+ 
+ size_t softmax_sz = qk_sz + logits_sz;
+
+ 
+ int rows_per_red = threads_per_block / threads_per_value;
+
+ 
+ size_t red_sz = rows_per_red * params.head_size * sizeof(T) / 2;
+
+ 
+ return std::max(softmax_sz, red_sz);
+}
+
+} 
+} 
+} 
+} 

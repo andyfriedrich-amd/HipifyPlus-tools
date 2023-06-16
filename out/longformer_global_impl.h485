@@ -1,0 +1,27 @@
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
+
+#pragma once
+
+namespace onnxruntime {
+namespace contrib {
+namespace rocm {
+
+// Size of global Index scratch in bytes.
+size_t GetGlobalScratchSize(int sequence_length);
+
+// Find the global attention indices and number of global attention tokens
+Status BuildGlobalIndex(
+    const hipDeviceProp_t& device_prop,
+    hipStream_t stream,
+    const int* global_attention,
+    int batch_size,
+    int sequence_length,
+    int* global_index,
+    int* batch_global_num,
+    void* scratch,
+    size_t scratch_size);
+
+}  // namespace rocm
+}  // namespace contrib
+}  // namespace onnxruntime

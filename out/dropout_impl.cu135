@@ -1,0 +1,157 @@
+#include "hip/hip_runtime.h"
+
+
+
+
+#include "core/providers/rocm/nn/dropout_impl.h"
+
+#include <hiprand/hiprand_kernel.h>
+#include <algorithm>
+#include "core/providers/rocm/cu_inc/bitmask.cuh"
+
+namespace onnxruntime {
+namespace rocm {
+
+constexpr int kBlockSize = 256;
+constexpr int kNumUnroll = 4;
+
+template <typename T, bool UseBitmask>
+__global__ void DropoutKernel(const HIP_LONG N, const HIP_LONG mask_element_count, const int step_size, const int steps_per_thread, const fast_divmod fdm_bits_per_element, const float ratio, const std::pair<uint64_t, uint64_t> seeds, const T* X_data, T* Y_data, void* mask_data) {
+ HIP_LONG idx = blockDim.x * blockIdx.x + threadIdx.x;
+
+ const float p = 1.0f - ratio;
+ const float scale = 1.0f / p;
+ hiprandStatePhilox4_32_10_t state;
+ hiprand_init(seeds.first, idx, seeds.second, &state);
+
+ float4 rand;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ for (int i = 0; i < steps_per_thread; ++i) {
+  HIP_LONG id = idx * kNumUnroll + i * step_size;
+  rand = hiprand_uniform4(&state);
+  BitmaskElementType thread_bitmask = 0;
+
+
+#pragma unroll
+  for (int i = 0; i < kNumUnroll; ++i) {
+   HIP_LONG li = id + i;
+   if (li < N) {
+    bool mask = (&rand.x)[i] < p;
+    Y_data[li] = static_cast<T>(static_cast<float>(X_data[li]) * mask * scale);
+    if (UseBitmask) {
+     thread_bitmask |= (mask << i);
+    } else {
+     reinterpret_cast<bool*>(mask_data)[li] = mask;
+    }
+   }
+  }
+
+  if (UseBitmask) {
+   SetBitmask<kNumUnroll>(id, mask_element_count, fdm_bits_per_element, thread_bitmask, reinterpret_cast<BitmaskElementType*>(mask_data));
+  }
+
+  __syncthreads();
+ }
+}
+
+template <typename T, bool UseBitmask>
+__global__ void DropoutVectorizedKernel(const HIP_LONG N, const HIP_LONG mask_element_count, const int step_size, const int steps_per_thread, const fast_divmod fdm_bits_per_element, const float ratio, const std::pair<uint64_t, uint64_t> seeds, const T* X_data, T* Y_data, void* mask_data) {
+ HIP_LONG idx = blockDim.x * blockIdx.x + threadIdx.x;
+
+ const float p = 1.0f - ratio;
+ const float scale = 1.0f / p;
+ hiprandStatePhilox4_32_10_t state;
+ hiprand_init(seeds.first, idx, seeds.second, &state);
+
+ float4 rand;
+
+ 
+ 
+ using LoadT = aligned_vector<T, kNumUnroll>;
+ using MaskLoadT = aligned_vector<bool, kNumUnroll>;
+
+ for (int i = 0; i < steps_per_thread; ++i) {
+  HIP_LONG id = idx * kNumUnroll + i * step_size;
+  rand = hiprand_uniform4(&state);
+  BitmaskElementType thread_bitmask = 0;
+
+  if (id < N) {
+   
+   T src[kNumUnroll];
+   LoadT* value = reinterpret_cast<LoadT*>(&src);
+   *value = *reinterpret_cast<const LoadT*>(&X_data[id]);
+
+   T r[kNumUnroll];
+   bool masks[kNumUnroll];
+
+
+#pragma unroll
+   for (int ii = 0; ii < kNumUnroll; ++ii) {
+    bool mask = (&rand.x)[ii] < p;
+    r[ii] = static_cast<T>(static_cast<float>(src[ii]) * mask * scale);
+    if (UseBitmask) {
+     thread_bitmask |= (mask << ii);
+    } else {
+     masks[ii] = mask;
+    }
+   }
+   
+   *(reinterpret_cast<LoadT*>(&Y_data[id])) = *reinterpret_cast<LoadT*>(&r[0]);
+   if (!UseBitmask) {
+    *(reinterpret_cast<MaskLoadT*>(&reinterpret_cast<bool*>(mask_data)[id])) =
+      *reinterpret_cast<MaskLoadT*>(&masks[0]);
+   }
+  }
+
+  if (UseBitmask) {
+   SetBitmask<kNumUnroll>(id, mask_element_count, fdm_bits_per_element, thread_bitmask, reinterpret_cast<BitmaskElementType*>(mask_data));
+  }
+
+  __syncthreads();
+ }
+}
+
+#define LAUNCH_DROPOUT_KERNEL(FuncName, UseBitmask)                             FuncName<T, UseBitmask><<<grid_size, kBlockSize, 0, stream>>>(                         static_cast<HIP_LONG>(N), static_cast<HIP_LONG>(mask_element_count), step_size, steps_per_thread, fdm_bits_per_element, ratio, seeds, X_data, Y_data, mask_data)
+
+#define HANDLE_DROPOUT_USE_BITMASK(FuncName)  if (use_bitmask) {               LAUNCH_DROPOUT_KERNEL(FuncName, true);   } else {                    LAUNCH_DROPOUT_KERNEL(FuncName, false);   }
+
+template <typename T>
+void DropoutKernelImpl(const hipDeviceProp_t& prop, hipStream_t stream, const int64_t N, const int64_t mask_element_count, const float ratio, PhiloxGenerator& generator, const T* X_data, T* Y_data, void* mask_data, bool use_bitmask) {
+ const int blocks_per_sm = prop.maxThreadsPerMultiProcessor / kBlockSize;
+ const int grid_size =
+   std::min(prop.multiProcessorCount * blocks_per_sm, static_cast<int>(CeilDiv(N, kBlockSize * kNumUnroll)));
+
+ 
+ 
+ const int step_size = kBlockSize * grid_size * kNumUnroll;
+ const int steps_per_thread = static_cast<int>(CeilDiv(N, step_size));
+ auto seeds = generator.NextPhiloxSeeds(static_cast<uint64_t>(steps_per_thread * kNumUnroll));
+
+ fast_divmod fdm_bits_per_element(kNumBitsPerBitmaskElement);
+ if (N % kNumUnroll != 0) {
+  HANDLE_DROPOUT_USE_BITMASK(DropoutKernel);
+ } else {
+  HANDLE_DROPOUT_USE_BITMASK(DropoutVectorizedKernel);
+ }
+}
+
+#undef HANDLE_DROPOUT_USE_BITMASK
+#undef LAUNCH_DROPOUT_KERNEL
+
+#define SPECIALIZED_DROPOUT_IMPL(T)                                           template void DropoutKernelImpl<T>(const hipDeviceProp_t& prop, hipStream_t stream, const int64_t N, const int64_t mask_element_count, const float ratio, PhiloxGenerator& generator, const T* X_data, T* Y_data, void* mask_data, bool use_bitmask);
+
+SPECIALIZED_DROPOUT_IMPL(float)
+SPECIALIZED_DROPOUT_IMPL(double)
+SPECIALIZED_DROPOUT_IMPL(half)
+SPECIALIZED_DROPOUT_IMPL(BFloat16)
+
+#undef SPECIALIZED_DROPOUT_IMPL
+
+} 
+} 

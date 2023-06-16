@@ -1,0 +1,233 @@
+
+
+
+#include "core/providers/shared_library/provider_api.h"
+#include "core/providers/rocm/math/variadic_elementwise_ops.h"
+
+#include <cassert>
+#include <algorithm>
+
+#include "core/framework/data_types_internal.h"
+#include "core/providers/rocm/math/binary_elementwise_ops.h"
+#include "core/providers/rocm/math/binary_elementwise_ops_impl.h"
+#include "core/providers/rocm/math/variadic_elementwise_ops_impl.h"
+#include "core/providers/rocm/math/variadic_elementwise_ops_tags.h"
+
+namespace onnxruntime {
+namespace rocm {
+
+template <typename VariadicElementwiseOpTag, typename... SupportedElementTypes>
+template <typename T>
+Status VariadicElementwiseOp<VariadicElementwiseOpTag, SupportedElementTypes...>::NoBroadcastBatchImplDispatchTarget<
+  T>::operator()(hipStream_t stream, const InputTensorVector& inputs, Tensor& output) const {
+ using HipT = typename ToHipType<T>::MappedType;
+ size_t input_count = inputs.size();
+ assert(input_count > 1);
+ size_t index = std::min(input_count, static_cast<size_t>(k_max_input_batch_size));
+ InputBatchArray<HipT> input_data_batch{static_cast<int32_t>(index)};
+ for (size_t i = 0; i < index; ++i) {
+  input_data_batch[static_cast<int32_t>(i)] = reinterpret_cast<const HipT*>(inputs[i].get().Data<T>());
+ }
+
+ HipT* output_data = reinterpret_cast<HipT*>(output.MutableData<T>());
+ Impl_NoBroadcastInputBatch<HipT, VariadicElementwiseOpTag>(stream, input_data_batch, output_data, output.Shape().Size());
+
+ while (index < input_count) {
+  size_t left_count = input_count - index + 1;
+  size_t batch = std::min(left_count, static_cast<size_t>(k_max_input_batch_size));
+  
+  if (batch == 2) {
+   BinaryElementwisePreparation prepare;
+   ORT_RETURN_IF_ERROR(BinaryElementwiseBroadcastPrepare(&output, &inputs[input_count - 1].get(), &output, &prepare));
+   Impl_General<HipT, VariadicElementwiseOpTag>(
+     stream, prepare.output_rank_or_simple_broadcast, &prepare.lhs_padded_strides, reinterpret_cast<const HipT*>(prepare.lhs_tensor->Data<T>()), &prepare.rhs_padded_strides, reinterpret_cast<const HipT*>(prepare.rhs_tensor->Data<T>()), &prepare.fdm_output_strides, prepare.fdm_H, prepare.fdm_C, reinterpret_cast<HipT*>(prepare.output_tensor->MutableData<T>()), prepare.output_tensor->Shape().Size());
+
+   
+   break;
+  }
+
+  InputBatchArray<HipT> left_input_data_batch{static_cast<int32_t>(batch)};
+  left_input_data_batch[0] = reinterpret_cast<const HipT*>(output.Data<T>());
+  for (size_t i = 1; i < batch; ++i) {
+   left_input_data_batch[static_cast<int32_t>(i)] =
+     reinterpret_cast<const HipT*>(inputs[index].get().Data<T>());
+   index++;
+  }
+
+  Impl_NoBroadcastInputBatch<HipT, VariadicElementwiseOpTag>(stream, left_input_data_batch, output_data, output.Shape().Size());
+ }
+
+ return Status::OK();
+}
+
+
+template <typename VariadicElementwiseOpTag, typename... SupportedElementTypes>
+template <typename T>
+Status VariadicElementwiseOp<VariadicElementwiseOpTag, SupportedElementTypes...>::
+  BinaryImplDispatchTarget<T>::operator()(hipStream_t stream, const Tensor& lhs, const Tensor& rhs, Tensor& output) const {
+ using HipT = typename ToHipType<T>::MappedType;
+
+ BinaryElementwisePreparation prepare;
+ ORT_RETURN_IF_ERROR(BinaryElementwiseBroadcastPrepare(&lhs, &rhs, &output, &prepare));
+
+ Impl_General<HipT, VariadicElementwiseOpTag>(
+   stream, prepare.output_rank_or_simple_broadcast, &prepare.lhs_padded_strides, reinterpret_cast<const HipT*>(prepare.lhs_tensor->Data<T>()), &prepare.rhs_padded_strides, reinterpret_cast<const HipT*>(prepare.rhs_tensor->Data<T>()), &prepare.fdm_output_strides, prepare.fdm_H, prepare.fdm_C, reinterpret_cast<HipT*>(prepare.output_tensor->MutableData<T>()), prepare.output_tensor->Shape().Size());
+
+ return Status::OK();
+}
+
+
+template <typename VariadicElementwiseOpTag, typename... SupportedElementTypes>
+template <typename T>
+Status
+VariadicElementwiseOp<VariadicElementwiseOpTag, SupportedElementTypes...>::GeneralImplDispatchTarget<T>::operator()(
+  hipStream_t stream, const InputTensorVector& inputs, Tensor& output) const {
+ assert(inputs.size() > 1);
+
+ using HipT = typename ToHipType<T>::MappedType;
+
+ 
+ size_t index_of_same_shape = 0;
+ for (; index_of_same_shape < inputs.size(); index_of_same_shape++) {
+  if (inputs[index_of_same_shape].get().Shape() == output.Shape()) {
+   break;
+  }
+ }
+
+ BinaryElementwisePreparation prepare;
+
+ 
+ if (index_of_same_shape == inputs.size()) {
+  HIP_RETURN_IF_ERROR(hipMemsetAsync(output.MutableDataRaw(), 0, output.SizeInBytes(), stream));
+  ORT_RETURN_IF_ERROR(BinaryElementwiseBroadcastPrepare(&output, &inputs[0].get(), &output, &prepare));
+  Impl_Add(stream, prepare.output_rank_or_simple_broadcast, &prepare.lhs_padded_strides, reinterpret_cast<const HipT*>(prepare.lhs_tensor->Data<T>()), &prepare.rhs_padded_strides, reinterpret_cast<const HipT*>(prepare.rhs_tensor->Data<T>()), &prepare.fdm_output_strides, prepare.fdm_H, prepare.fdm_C, reinterpret_cast<HipT*>(prepare.output_tensor->MutableData<T>()), prepare.output_tensor->Shape().Size());
+ } else {
+  
+  size_t index = index_of_same_shape == 0 ? 1 : 0;
+  ORT_RETURN_IF_ERROR(
+    BinaryElementwiseBroadcastPrepare(&inputs[index_of_same_shape].get(), &inputs[index].get(), &output, &prepare));
+  Impl_General<HipT, VariadicElementwiseOpTag>(
+    stream, prepare.output_rank_or_simple_broadcast, &prepare.lhs_padded_strides, reinterpret_cast<const HipT*>(prepare.lhs_tensor->Data<T>()), &prepare.rhs_padded_strides, reinterpret_cast<const HipT*>(prepare.rhs_tensor->Data<T>()), &prepare.fdm_output_strides, prepare.fdm_H, prepare.fdm_C, reinterpret_cast<HipT*>(prepare.output_tensor->MutableData<T>()), prepare.output_tensor->Shape().Size());
+ }
+
+ for (size_t index = 1; index < inputs.size(); index++) {
+  
+  if (index == index_of_same_shape || (index_of_same_shape == 0 && index == 1)) {
+   continue;
+  }
+
+  ORT_RETURN_IF_ERROR(BinaryElementwiseBroadcastPrepare(&output, &inputs[index].get(), &output, &prepare));
+  Impl_General<HipT, VariadicElementwiseOpTag>(
+    stream, prepare.output_rank_or_simple_broadcast, &prepare.lhs_padded_strides, reinterpret_cast<const HipT*>(prepare.lhs_tensor->Data<T>()), &prepare.rhs_padded_strides, reinterpret_cast<const HipT*>(prepare.rhs_tensor->Data<T>()), &prepare.fdm_output_strides, prepare.fdm_H, prepare.fdm_C, reinterpret_cast<HipT*>(prepare.output_tensor->MutableData<T>()), prepare.output_tensor->Shape().Size());
+ }
+
+ return Status::OK();
+}
+
+template <typename VariadicElementwiseOpTag, typename... SupportedElementTypes>
+Status VariadicElementwiseOp<VariadicElementwiseOpTag, SupportedElementTypes...>::ComputeInternal(
+  OpKernelContext* context) const {
+ const auto& node = Node();
+ const auto& node_name = node.Name();
+ auto input_count = node.InputArgCount().front();
+ ORT_RETURN_IF_NOT(input_count >= 1, "Must have 1 or more inputs");
+
+ const InputTensorVector input_tensors =
+   [&context, input_count]() {
+    InputTensorVector result{};
+    result.reserve(input_count);
+    for (int i = 0; i < input_count; ++i) {
+     const auto& tensor = context->RequiredInput<Tensor>(i);
+     result.push_back(std::cref(tensor));
+    }
+    return result;
+   }();
+
+ const auto& first_input_tensor = input_tensors[0].get();
+
+ 
+ if (input_count == 1) {
+  auto& output_tensor = context->RequiredOutput(0, first_input_tensor.Shape());
+  if (first_input_tensor.DataRaw() != output_tensor.DataRaw()) {
+   HIP_RETURN_IF_ERROR(hipMemcpyAsync(
+     output_tensor.MutableDataRaw(), first_input_tensor.DataRaw(), first_input_tensor.SizeInBytes(), hipMemcpyDeviceToDevice, Stream(context)));
+  }
+
+  return Status::OK();
+ }
+
+ const auto element_type = first_input_tensor.GetElementType();
+ utils::MLTypeCallDispatcher<SupportedElementTypes...> dispatcher(element_type);
+
+ 
+ if (std::all_of(input_tensors.begin() + 1, input_tensors.end(), [&first_input_tensor](InputTensorVector::value_type t) {
+          return first_input_tensor.Shape() == t.get().Shape();
+         })) {
+  auto& output_tensor = context->RequiredOutput(0, first_input_tensor.Shape());
+
+  
+  if (input_count == 2) {
+   return dispatcher.template InvokeRet<Status, BinaryImplDispatchTarget>(Stream(context), input_tensors[0], input_tensors[1], output_tensor);
+  }
+
+  return dispatcher.template InvokeRet<Status, NoBroadcastBatchImplDispatchTarget>(Stream(context), input_tensors, output_tensor);
+ }
+
+ 
+ TensorShape output_shape;
+ TensorShape previous_output_shape = first_input_tensor.Shape();
+ for (int index = 1; index < input_count; index++) {
+  ORT_RETURN_IF_ERROR(ComputeOutputShape(
+    node_name, previous_output_shape, input_tensors[index].get().Shape(), output_shape));
+  previous_output_shape = output_shape;
+ }
+ Tensor& output_tensor = context->RequiredOutput(0, output_shape);
+
+ 
+ if (input_count == 2) {
+  return dispatcher.template InvokeRet<Status, BinaryImplDispatchTarget>(
+    Stream(context), input_tensors[0], input_tensors[1], output_tensor);
+ }
+
+ 
+ return dispatcher.template InvokeRet<Status, GeneralImplDispatchTarget>(
+   Stream(context), input_tensors, output_tensor);
+}
+
+namespace {
+
+using SumOp = VariadicElementwiseOp<variadic_elementwise_ops::Sum, MLFloat16, float, double, BFloat16>;
+
+using MinOp = VariadicElementwiseOp<variadic_elementwise_ops::Min, uint32_t, uint64_t, int32_t, int64_t, MLFloat16, float, double, BFloat16>;
+
+using MaxOp = VariadicElementwiseOp<variadic_elementwise_ops::Max, uint32_t, uint64_t, int32_t, int64_t, MLFloat16, float, double, BFloat16>;
+} 
+
+
+
+#define REGISTER_KERNEL(name, impl_class, version, datatypes)                              ONNX_OPERATOR_KERNEL_EX(name, kOnnxDomain, version, kRocmExecutionProvider, (*KernelDefBuilder::Create()).TypeConstraint("T", BuildKernelDefConstraints<datatypes>()), impl_class)
+
+#define REGISTER_VERSIONED_KERNEL(name, impl_class, start_version, end_version, datatypes)  ONNX_OPERATOR_VERSIONED_KERNEL_EX(                               name, kOnnxDomain, start_version, end_version, kRocmExecutionProvider, (*KernelDefBuilder::Create()).TypeConstraint("T", BuildKernelDefConstraints<datatypes>()), impl_class)
+
+#define UZILHFD_TYPES uint32_t, uint64_t, int32_t, int64_t, MLFloat16, float, double, BFloat16
+#define HFD_TYPES MLFloat16, float, double, BFloat16
+
+REGISTER_KERNEL(Sum, SumOp, 13, HFD_TYPES)
+REGISTER_VERSIONED_KERNEL(Sum, SumOp, 8, 12, HFD_TYPES)
+REGISTER_VERSIONED_KERNEL(Sum, SumOp, 6, 7, HFD_TYPES)
+
+REGISTER_KERNEL(Min, MinOp, 13, UZILHFD_TYPES)
+REGISTER_VERSIONED_KERNEL(Min, MinOp, 12, 12, UZILHFD_TYPES)
+REGISTER_VERSIONED_KERNEL(Min, MinOp, 6, 11, HFD_TYPES)
+
+REGISTER_KERNEL(Max, MaxOp, 13, UZILHFD_TYPES)
+REGISTER_VERSIONED_KERNEL(Max, MaxOp, 12, 12, UZILHFD_TYPES)
+REGISTER_VERSIONED_KERNEL(Max, MaxOp, 6, 11, HFD_TYPES)
+
+#undef HFD_TYPES
+#undef UZILHFD_TYPES
+#undef REGISTER_VERSIONED_KERNEL
+#undef REGISTER_KERNEL
+
+} 
+} 

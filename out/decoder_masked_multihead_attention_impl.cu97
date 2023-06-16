@@ -1,0 +1,537 @@
+
+
+
+
+
+
+
+
+
+
+
+#include "decoder_masked_multihead_attention_impl.h"
+#include "decoder_masked_multihead_attention_impl_utils.h"
+#include <cfloat>
+
+namespace onnxruntime {
+namespace contrib {
+namespace cuda {
+
+using namespace decoder_masked_self_attention_details;
+
+template <
+  
+  typename T, int head_size, int THREADS_PER_KEY, int THREADS_PER_VALUE, int THREADS_PER_BLOCK>
+__global__ void masked_multihead_attention_kernel(DecoderMaskedMultiHeadAttentionParams params) {
+ 
+#if defined(__CUDA_ARCH__) && __CUDA_ARCH__ < 530
+ (void)(params);
+#else
+
+ 
+ static_assert(head_size % THREADS_PER_KEY == 0, "");
+
+ 
+ static_assert(head_size % THREADS_PER_VALUE == 0, "");
+
+ 
+ constexpr int WARP_SIZE = 32;
+
+ 
+ constexpr int WARPS_PER_BLOCK = THREADS_PER_BLOCK / WARP_SIZE;
+
+ extern __shared__ char smem_[];
+
+ 
+ float* qk_smem = reinterpret_cast<float*>(smem_);
+
+ 
+ char* logits_smem_ = smem_;
+
+ if (sizeof(T) != 4) {
+  
+  logits_smem_ += (((params.total_sequence_length + 3) / 4) * 16);
+ }
+
+ T* logits_smem = reinterpret_cast<T*>(logits_smem_);
+
+ 
+ T* out_smem = reinterpret_cast<T*>(smem_);
+
+ 
+ __shared__ float red_smem[WARPS_PER_BLOCK * 2];
+
+ 
+ using Qk_vec_k = typename Qk_vec_k_<T, head_size>::Type; 
+ using Qk_vec_m = typename Qk_vec_m_<T, head_size>::Type; 
+
+ 
+ 
+ __shared__ __align__(sizeof(Qk_vec_k)) T q_smem[head_size];
+
+ 
+ constexpr int QK_VEC_SIZE = sizeof(Qk_vec_m) / sizeof(T);
+
+ 
+ static_assert(head_size % QK_VEC_SIZE == 0, "");
+
+ constexpr int QK_VECS_PER_WARP = head_size / QK_VEC_SIZE;
+
+ 
+ 
+ 
+
+ 
+ constexpr int QK_ELTS_IN_16B = 16 / sizeof(T);
+
+ 
+ constexpr int QK_VECS_IN_16B = 16 / sizeof(Qk_vec_m);
+
+ 
+ const int bi = blockIdx.y;
+
+ 
+ 
+
+ 
+ const int bbi = bi / params.beam_width;
+
+ 
+ const int hi = blockIdx.x;
+
+ 
+ const int bhi = bi * params.num_heads + hi;
+
+ 
+ const int bbhi = bbi * params.beam_width * params.num_heads + hi;
+
+ 
+ const int tidx = threadIdx.x;
+
+ 
+ float qk_max = -FLT_MAX;
+
+ float qk = 0.0F;
+
+ int qkv_base_offset = params.is_mha && !params.is_packed_qkv
+              ? bi * params.hidden_size + hi * head_size
+              : bi * (3 * params.hidden_size) + hi * head_size;
+
+ const size_t bi_total_seq_length = bi * params.total_sequence_length;
+
+ const size_t bi_max_seq_length = bi * params.max_sequence_length;
+
+ int tlength = params.is_cross_attention ? params.kv_sequence_length : params.past_sequence_length;
+
+ 
+ const bool is_masked = tidx >= QK_VECS_PER_WARP;
+
+ 
+ int qk_offset = qkv_base_offset + tidx * QK_VEC_SIZE;
+
+ 
+ Qk_vec_k q;
+ zero(q);
+
+ if (!is_masked) {
+  q = vec_conversion<Qk_vec_k, Qk_vec_m>(*reinterpret_cast<const Qk_vec_m*>(&reinterpret_cast<T*>(params.q)[qk_offset]));
+ }
+
+ 
+ int qk_bias_offset = hi * head_size + tidx * QK_VEC_SIZE;
+
+ 
+ if (params.q_bias && !is_masked) {
+  Qk_vec_k q_bias;
+
+  q_bias = vec_conversion<Qk_vec_k, Qk_vec_m>(*reinterpret_cast<const Qk_vec_m*>(&reinterpret_cast<T*>(params.q_bias)[qk_bias_offset]));
+
+  q = add_vec(q, q_bias);
+ }
+
+
+ T* params_k_cache = reinterpret_cast<T*>(params.k_cache);
+
+ const float inv_sqrt_dh = params.scale;
+
+ if (!is_masked) {
+  
+  *reinterpret_cast<Qk_vec_k*>(&q_smem[tidx * QK_VEC_SIZE]) = q;
+ }
+
+ if (!params.is_cross_attention) {
+  Qk_vec_k k;
+
+  zero(k);
+
+  if (!is_masked) {
+   k = vec_conversion<Qk_vec_k, Qk_vec_m>(*reinterpret_cast<const Qk_vec_m*>(&reinterpret_cast<T*>(params.k)[qk_offset]));
+
+   if (params.k_bias) {
+    Qk_vec_k k_bias;
+
+    k_bias = vec_conversion<Qk_vec_k, Qk_vec_m>(*reinterpret_cast<const Qk_vec_m*>(&reinterpret_cast<T*>(params.k_bias)[qk_bias_offset]));
+
+    k = add_vec(k, k_bias);
+   }
+  }
+
+  if (!is_masked) {
+   
+   
+   
+   
+   
+
+   
+   int co = tidx / QK_VECS_IN_16B;
+
+   
+   int ci = tidx % QK_VECS_IN_16B * QK_VEC_SIZE;
+
+   
+   int offset = bhi * params.max_sequence_length * head_size + co * params.max_sequence_length * QK_ELTS_IN_16B +
+          tlength * QK_ELTS_IN_16B + ci;
+
+   
+   *reinterpret_cast<Qk_vec_m*>(&params_k_cache[offset]) = vec_conversion<Qk_vec_m, Qk_vec_k>(k);
+
+   
+   using Qk_vec_acum = Qk_vec_k;
+   qk = dot<Qk_vec_acum, Qk_vec_k>(q, k);
+
+   if (QK_VECS_PER_WARP <= WARP_SIZE) {
+#pragma unroll
+    for (int mask = QK_VECS_PER_WARP / 2; mask >= 1; mask /= 2) {
+     qk += __shfl_xor_sync(shfl_mask(QK_VECS_PER_WARP), qk, mask);
+    }
+   }
+  }
+
+  if (QK_VECS_PER_WARP > WARP_SIZE) {
+   constexpr int WARPS_PER_RED = (QK_VECS_PER_WARP + WARP_SIZE - 1) / WARP_SIZE;
+   qk = block_sum<WARPS_PER_RED>(&red_smem[WARPS_PER_RED], qk);
+  }
+
+  
+  if (tidx == 0) {
+   
+   qk *= inv_sqrt_dh;
+   if (params.relative_attention_bias != nullptr) {
+    qk = add_vec(qk, reinterpret_cast<T*>(params.relative_attention_bias)[hi * params.sequence_length * params.total_sequence_length + tlength]);
+   }
+   qk_max = qk;
+   qk_smem[tlength] = qk;
+  }
+ }
+
+ 
+ __syncthreads();
+
+ 
+ using K_vec_k = typename K_vec_k_<T, THREADS_PER_KEY>::Type;
+ using K_vec_m = typename K_vec_m_<T, THREADS_PER_KEY>::Type;
+
+ 
+ constexpr int K_VEC_SIZE = sizeof(K_vec_m) / sizeof(T);
+
+ 
+ static_assert(head_size % K_VEC_SIZE == 0, "");
+
+ 
+ constexpr int K_ELTS_PER_THREAD = head_size / THREADS_PER_KEY;
+
+ 
+ constexpr int K_VECS_PER_THREAD = K_ELTS_PER_THREAD / K_VEC_SIZE;
+
+ 
+ int ko = tidx / THREADS_PER_KEY;
+
+ 
+ int ki = tidx % THREADS_PER_KEY * K_VEC_SIZE;
+
+ static_assert(head_size == THREADS_PER_KEY * K_VEC_SIZE * K_VECS_PER_THREAD);
+
+ 
+ K_vec_k q_vec[K_VECS_PER_THREAD];
+#pragma unroll
+ for (int ii = 0; ii < K_VECS_PER_THREAD; ++ii) {
+  q_vec[ii] = *reinterpret_cast<const K_vec_k*>(&q_smem[ki + ii * THREADS_PER_KEY * K_VEC_SIZE]);
+ }
+
+ 
+ constexpr int K_PER_ITER = THREADS_PER_BLOCK / THREADS_PER_KEY;
+
+ 
+ constexpr int K_PER_WARP = WARP_SIZE / THREADS_PER_KEY;
+
+ 
+ T* k_cache_batch = &params_k_cache[bbhi * params.max_sequence_length * head_size + ki];
+
+ 
+ int ti_end = ((tlength + K_PER_WARP - 1) / K_PER_WARP) * K_PER_WARP;
+
+ 
+ bool has_beams = params.cache_indir != nullptr && !params.is_cross_attention;
+ const int* beam_indices = has_beams ? &params.cache_indir[bi_max_seq_length] : nullptr;
+
+ for (int ti = ko; ti < ti_end; ti += K_PER_ITER) {
+  bool is_masked = (params.mask != nullptr) && (params.mask[bi_total_seq_length + ti] == 0);
+
+  
+  K_vec_k k_vec[K_VECS_PER_THREAD];
+
+  if (has_beams) {
+#pragma unroll
+   for (int ii = 0; ii < K_VECS_PER_THREAD; ++ii) {
+    int jj = ii * params.max_sequence_length + ti;
+
+    if (ti < tlength) {
+     const int beam_offset = beam_indices[ti] * params.num_heads * params.max_sequence_length * head_size;
+     k_vec[ii] = vec_conversion<K_vec_k, K_vec_m>(
+       (*reinterpret_cast<const K_vec_m*>(&k_cache_batch[beam_offset + jj * QK_ELTS_IN_16B])));
+    }
+   }
+  } else {
+#pragma unroll
+   for (int ii = 0; ii < K_VECS_PER_THREAD; ++ii) {
+    int jj = ii * params.max_sequence_length + ti;
+
+    if (ti < tlength) {
+     k_vec[ii] = vec_conversion<K_vec_k, K_vec_m>(
+       (*reinterpret_cast<const K_vec_m*>(&k_cache_batch[jj * QK_ELTS_IN_16B])));
+    }
+   }
+  }
+
+  
+  
+  float qk = Qk_dot<T, THREADS_PER_KEY>::dot(q_vec, k_vec) * inv_sqrt_dh;
+
+  
+  
+  
+  if (is_masked) {
+   qk += params.mask_filter_value;
+  }
+
+  
+  if (ti < tlength && tidx % THREADS_PER_KEY == 0) {
+   if (params.relative_attention_bias != nullptr) {
+    qk = add_vec(qk, reinterpret_cast<T*>(params.relative_attention_bias)[hi * params.sequence_length * params.total_sequence_length + ti]);
+   }
+   qk_max = fmaxf(qk_max, qk);
+   qk_smem[ti] = qk;
+  }
+ }
+
+ 
+ 
+ 
+ 
+#pragma unroll
+ for (int mask = WARP_SIZE / 2; mask >= THREADS_PER_KEY; mask /= 2) {
+  qk_max = fmaxf(qk_max, __shfl_xor_sync(uint32_t(-1), qk_max, mask));
+ }
+
+ 
+ const int warp = tidx / WARP_SIZE;
+ const int lane = tidx % WARP_SIZE;
+
+ 
+ if (lane == 0) {
+  red_smem[warp] = qk_max;
+ }
+
+ 
+ __syncthreads();
+
+ 
+ qk_max = lane < WARPS_PER_BLOCK ? red_smem[lane] : -FLT_MAX;
+#pragma unroll
+ for (int mask = WARPS_PER_BLOCK / 2; mask >= 1; mask /= 2) {
+  qk_max = fmaxf(qk_max, __shfl_xor_sync(uint32_t(-1), qk_max, mask));
+ }
+
+ 
+ qk_max = __shfl_sync(uint32_t(-1), qk_max, 0);
+
+ 
+ float sum = 0.f;
+ int sum_tlength = params.is_cross_attention ? tlength - 1 : tlength;
+ for (int ti = tidx; ti <= sum_tlength; ti += THREADS_PER_BLOCK) {
+  
+  
+  
+  float logit = __expf(qk_smem[ti] - qk_max);
+  sum += logit;
+  qk_smem[ti] = logit;
+ }
+
+ 
+ sum = block_sum<WARPS_PER_BLOCK>(&red_smem[WARPS_PER_BLOCK], sum);
+
+ 
+ float inv_sum = __fdividef(1.f, sum + 1.e-6f);
+ for (int ti = tidx; ti <= sum_tlength; ti += THREADS_PER_BLOCK) {
+  float logit = qk_smem[ti] * inv_sum;
+  ConvertFromFloat(logits_smem[ti], logit);
+ }
+
+ 
+ 
+
+ 
+ constexpr int V_VEC_SIZE = head_size / THREADS_PER_VALUE;
+
+ 
+ using V_vec_k = typename V_vec_k_<T, V_VEC_SIZE>::Type;
+ using V_vec_m = typename V_vec_m_<T, V_VEC_SIZE>::Type;
+
+ 
+ int vo = tidx / THREADS_PER_VALUE;
+
+ 
+ int vi = tidx % THREADS_PER_VALUE * V_VEC_SIZE;
+
+ 
+ T* params_v_cache = reinterpret_cast<T*>(params.v_cache);
+
+ T* v_cache = &params_v_cache[bhi * params.max_sequence_length * head_size + vi];
+
+ 
+ T* v_cache_batch = &params_v_cache[bbhi * params.max_sequence_length * head_size + vi];
+
+ 
+ constexpr int V_PER_ITER = THREADS_PER_BLOCK / THREADS_PER_VALUE;
+
+ 
+ V_vec_k v_bias;
+ if (params.v_bias && !params.is_cross_attention) {
+  zero(v_bias);
+
+  T* params_v_bias = reinterpret_cast<T*>(params.v_bias);
+
+  if (vo == tlength % V_PER_ITER) {
+   v_bias = vec_conversion<V_vec_k, V_vec_m>(*reinterpret_cast<const V_vec_m*>(&params_v_bias[hi * head_size + vi]));
+  }
+ }
+
+ 
+ 
+ __syncthreads();
+
+ using V_vec_acum = typename V_vec_acum_fp32_<V_vec_k>::Type;
+
+ 
+ V_vec_acum out;
+ zero(out);
+
+ 
+ for (int ti = vo; ti < tlength; ti += V_PER_ITER) {
+  
+  const int beam_src = has_beams ? params.cache_indir[bi_max_seq_length + ti] : 0;
+  const int beam_offset = has_beams ? beam_src * params.num_heads * params.max_sequence_length * head_size : 0;
+
+  
+  V_vec_k v = vec_conversion<V_vec_k, V_vec_m>(*reinterpret_cast<const V_vec_m*>(&v_cache_batch[beam_offset + ti * head_size]));
+
+  
+  T logit = logits_smem[ti];
+  out = fma(logit, v, out);
+ }
+
+ 
+ if (vo == tlength % V_PER_ITER && !params.is_cross_attention) {
+  const auto v_offset = qkv_base_offset + vi;
+
+  V_vec_k v;
+  v = vec_conversion<V_vec_k, V_vec_m>(*reinterpret_cast<const V_vec_m*>(&reinterpret_cast<T*>(params.v)[v_offset]));
+  if (params.v_bias) {
+   v = add_vec(v, v_bias);
+  }
+
+  
+  *reinterpret_cast<V_vec_m*>(&v_cache[tlength * head_size]) = vec_conversion<V_vec_m, V_vec_k>(v);
+
+  
+  out = fma(logits_smem[tlength], v, out);
+ }
+
+ 
+ __syncthreads();
+
+ 
+#pragma unroll
+ for (int active_groups = V_PER_ITER; active_groups >= 2; active_groups /= 2) {
+  
+  int midpoint = active_groups / 2;
+
+  
+  if (vo >= midpoint && vo < active_groups) {
+   ConvertFromFloat(*reinterpret_cast<V_vec_k*>(&out_smem[(vo - midpoint) * head_size + vi]), out);
+  }
+  __syncthreads();
+
+  
+  if (vo < midpoint) {
+   out = add_vec(*reinterpret_cast<const V_vec_k*>(&out_smem[vo * head_size + vi]), out);
+  }
+  __syncthreads();
+ }
+
+ 
+ T* params_out = reinterpret_cast<T*>(params.out);
+ if (vo == 0) {
+  ConvertFromFloat(*reinterpret_cast<V_vec_m*>(&params_out[bhi * head_size + vi]), out);
+ }
+#endif
+}
+
+
+
+
+template void __global__ masked_multihead_attention_kernel<float, 32, 4, 8, 64>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<float, 32, 2, 8, 128>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<float, 32, 1, 8, 256>(DecoderMaskedMultiHeadAttentionParams params);
+
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 32, 4, 4, 64>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 32, 2, 4, 128>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 32, 1, 4, 256>(DecoderMaskedMultiHeadAttentionParams params);
+
+
+template void __global__ masked_multihead_attention_kernel<float, 64, 4, 16, 64>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<float, 64, 2, 16, 128>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<float, 64, 1, 16, 256>(DecoderMaskedMultiHeadAttentionParams params);
+
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 64, 4, 8, 64>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 64, 2, 8, 128>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 64, 1, 8, 256>(DecoderMaskedMultiHeadAttentionParams params);
+
+
+template void __global__ masked_multihead_attention_kernel<float, 128, 4, 32, 64>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<float, 128, 2, 32, 128>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<float, 128, 1, 32, 256>(DecoderMaskedMultiHeadAttentionParams params);
+
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 128, 4, 16, 64>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 128, 2, 16, 128>(DecoderMaskedMultiHeadAttentionParams params);
+
+template void __global__ masked_multihead_attention_kernel<uint16_t, 128, 1, 16, 256>(DecoderMaskedMultiHeadAttentionParams params);
+
+} 
+} 
+} 
