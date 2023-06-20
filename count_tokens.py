@@ -160,44 +160,44 @@ def code_compression_test(out_path, output_directory):
 
 
 
-def count_token():
-    pattern = r"C:(.*?)\n"
-    out_path = 'betterlog.txt'
-    counter_1k = 0
-    counter_for_compress = 0
-    counter_above = 0
-    counter_file_miss = 0
-    with open(out_path, "r", encoding="utf-8") as file:
-        text = file.read()
-        #print(text)
-        matches = re.findall(pattern, text)
+# def count_token():
+#     pattern = r"C:(.*?)\n"
+#     out_path = 'betterlog.txt'
+#     counter_1k = 0
+#     counter_for_compress = 0
+#     counter_above = 0
+#     counter_file_miss = 0
+#     with open(out_path, "r", encoding="utf-8") as file:
+#         text = file.read()
+#         #print(text)
+#         matches = re.findall(pattern, text)
 
-        for match in matches:
-            code_path = os.path.normpath(match)
-            #code_path = os.path.join('/home/mobaxterm/Desktop/ai4amd', norm_path)
-            print(code_path)
-            #try:
-            with open(code_path, "r") as file:
-                file_contents = file.read()
-                tokens = enc.encode(file_contents)
-                num_tokens = len(tokens)
-                if(num_tokens <= 1000):
-                    counter_1k += 1
-                elif(num_tokens > 1000 and num_tokens <= 3000):
-                    counter_for_compress += 1
-                else:
-                    counter_above +=1
-                print("Number of tokens:", num_tokens)
-            #except Exception:
-                #print(code_path)
-                #print("FILE MISS!!!!")
-            #    counter_file_miss += 1
-            #    pass
-            print()
-    print("less than 1k" + str(counter_1k))
-    print("Around 3k", + str(counter_for_compress))
-    print("ABOVE 3k ", + str(counter_above))
-    print("File miss", + str(counter_file_miss))
+#         for match in matches:
+#             code_path = os.path.normpath(match)
+#             #code_path = os.path.join('/home/mobaxterm/Desktop/ai4amd', norm_path)
+#             print(code_path)
+#             #try:
+#             with open(code_path, "r") as file:
+#                 file_contents = file.read()
+#                 tokens = enc.encode(file_contents)
+#                 num_tokens = len(tokens)
+#                 if(num_tokens <= 1000):
+#                     counter_1k += 1
+#                 elif(num_tokens > 1000 and num_tokens <= 3000):
+#                     counter_for_compress += 1
+#                 else:
+#                     counter_above +=1
+#                 print("Number of tokens:", num_tokens)
+#             #except Exception:
+#                 #print(code_path)
+#                 #print("FILE MISS!!!!")
+#             #    counter_file_miss += 1
+#             #    pass
+#             print()
+#     print("less than 1k" + str(counter_1k))
+#     print("Around 3k", + str(counter_for_compress))
+#     print("ABOVE 3k ", + str(counter_above))
+#     print("File miss", + str(counter_file_miss))
 
 
 
