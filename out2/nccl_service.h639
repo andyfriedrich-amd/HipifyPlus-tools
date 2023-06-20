@@ -1,0 +1,217 @@
+
+
+
+#if defined(USE_CUDA) && defined(ORT_USE_NCCL) && defined(USE_NCCL_P2P)
+
+#pragma once
+#include <condition_variable>
+#include <list>
+#include <mutex>
+#include <map>
+#include <vector>
+#include <iostream>
+#include <string>
+#include <thread>
+
+#include <nccl.h>
+
+#include "orttraining/core/framework/communication/mpi/mpi_include.h"
+
+namespace onnxruntime {
+namespace cuda {
+
+struct NcclTask final {
+ 
+ enum class Type { SEND, RECV, ALLREDUCE };
+ 
+ Type type;
+ 
+ 
+ std::vector<int> peers;
+
+ 
+ 
+ void* ptr;
+ 
+ size_t size;
+
+ 
+ bool is_enqueued;
+ bool is_finished;
+
+ 
+ std::string info;
+
+ 
+ bool Compare(const NcclTask& other) const;
+
+ 
+ void ResetTask();
+};
+
+
+struct NcclTaskGroup final {
+ 
+ 
+ 
+ void PlanTask(const NcclTask::Type type, const std::vector<int> peers);
+ 
+ const NcclTask* EqueueTask(
+   const NcclTask::Type type, const std::vector<int> peers, void* ptr, const size_t size, const std::string info);
+ bool IsAllTasksEqueued() const;
+ bool IsAllTasksFinished() const;
+ void ResetAllTasks();
+ friend std::ostream& operator<<(std::ostream& stream, const NcclTaskGroup& task_group);
+ std::vector<NcclTask> batch;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class INcclService {
+ public:
+ static INcclService& GetInstance();
+
+ 
+
+ 
+ virtual void PlanStart() = 0;
+ 
+ virtual void PlanEnd() = 0;
+ 
+ 
+ virtual void PlanNewGroupStart() = 0;
+ 
+ virtual void PlanNewGroupEnd() = 0;
+ 
+ virtual void PlanSend(const int dst) = 0;
+ 
+ virtual void PlanRecv(const int src) = 0;
+
+ 
+
+ 
+ 
+ virtual void Launch() = 0;
+ 
+ virtual void SubmitSendAndWait(void* buffer, size_t count, int peer) = 0;
+ 
+ virtual void SubmitRecvAndWait(void* buffer, size_t count, int peer) = 0;
+ 
+ 
+ virtual void Reset() = 0;
+ 
+ virtual void Terminate() = 0;
+};
+
+class NcclService final : public INcclService {
+ public:
+ 
+ static NcclService& GetInstance() {
+  static NcclService instance_;
+  return instance_;
+ };
+
+ 
+
+ 
+ void PlanStart() override;
+ 
+ void PlanEnd() override;
+ 
+ 
+ void PlanNewGroupStart() override;
+ 
+ void PlanNewGroupEnd() override;
+ 
+ void PlanSend(const int dst) override;
+ 
+ void PlanRecv(const int src) override;
+
+ 
+
+ 
+ 
+ void Launch() override;
+ 
+ void SubmitSendAndWait(void* buffer, size_t count, int peer) override;
+ 
+ void SubmitRecvAndWait(void* buffer, size_t count, int peer) override;
+ 
+ 
+ void Reset() override;
+ 
+ void Terminate() override;
+
+ 
+ friend std::ostream& operator<<(std::ostream& stream, const NcclService& service);
+
+ private:
+ NcclService() = default;
+ ~NcclService() = default;
+ NcclService(const NcclService&) = delete;
+ NcclService& operator=(const NcclService&) = delete;
+ 
+ void Initialize();
+ 
+ 
+ void WaitForLaunch();
+ 
+ int FindNextCommunicationTime() const;
+
+ 
+ std::mutex mutex_;
+ 
+ std::condition_variable cv_;
+
+ 
+ cudaStream_t stream_;
+ ncclComm_t comm_;
+
+ 
+ bool is_running_;
+ 
+ bool is_planned_;
+ 
+ size_t rank_;
+
+ size_t time_;
+ size_t total_time_;
+
+ 
+ 
+ std::vector<bool> group_status_;
+ 
+ 
+ 
+ std::vector<NcclTaskGroup> schedule_;
+ 
+ std::thread worker_;
+};
+
+} 
+} 
+
+#endif

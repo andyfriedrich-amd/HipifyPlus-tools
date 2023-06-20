@@ -1,0 +1,96 @@
+
+
+
+#pragma once
+#include "core/providers/rocm/shared_inc/rocm_utils.h"
+#include <hip/hip_fp16.h>
+#include <rocblas/rocblas.h>
+#include "contrib_ops/cpu/bert/attention_common.h"
+#include "core/framework/allocator.h"
+
+namespace onnxruntime {
+namespace contrib {
+namespace rocm {
+
+constexpr int kCumulatedSequenceLengthCacheMaxBatchSize = 128;
+
+struct CumulatedSequenceLengthCache {
+ onnxruntime::IAllocatorUniquePtr<void> buffer;
+ int32_t max_batch_size;
+ int32_t sequence_length;
+
+ CumulatedSequenceLengthCache() : max_batch_size(0), sequence_length(0) {}
+ void Initialize(int32_t sequence_length, hipStream_t stream);
+};
+
+size_t
+GetAttentionScratchSize(
+  size_t element_size, size_t batch_size, size_t num_heads, size_t sequence_length, size_t all_sequence_length);
+
+size_t GetSequenceOffsetSize(int batch_size, bool has_padding);
+
+size_t GetAttentionWorkspaceSize(
+  size_t element_size, size_t batchsize, size_t num_heads, size_t qk_head_size, size_t v_head_size, size_t sequence_length, size_t kv_sequence_length, size_t total_sequence_length, void* fused_runner, bool use_fused_cross_attention, bool use_memory_efficient_attention);
+
+template <typename T>
+struct AttentionData {
+ T* gemm_buffer;
+ const T* bias;
+
+ const T* query;
+ const T* key;
+ const T* value;
+ const int* mask_index;
+ gsl::span<const int64_t> mask_index_dims;
+ const T* past;
+ const T* past_key;
+ const T* past_value;
+ const T* relative_position_bias;
+
+ bool has_qkv_workspace;
+ T* workspace;
+ T* temp_k_workspace;
+ T* temp_v_workspace;
+
+ T* output;
+ T* present;
+ T* present_key;
+ T* present_value;
+
+ void* fused_runner;
+ const void* fused_cross_attention_kernel;
+
+ bool use_memory_efficient_attention;
+
+ mutable CumulatedSequenceLengthCache* cumulated_sequence_length_q_cache;
+ mutable CumulatedSequenceLengthCache* cumulated_sequence_length_kv_cache;
+};
+
+template <typename T>
+Status QkvToContext(
+  const hipDeviceProp_t& device_prop, rocblas_handle& rocblas, hipStream_t stream, contrib::AttentionParameters& parameters, AttentionData<T>& data);
+
+Status LaunchDecoderAttentionKernel(
+  const hipDeviceProp_t& prop, hipStream_t stream, rocblas_handle& rocblas, const size_t element_size, const int batch_size, const int sequence_length, const int kv_sequence_length, const int num_heads, const int head_size, const bool static_kv, const bool use_past, const bool has_layer_state, const bool has_key_padding_mask, const float mask_filter_value, const void* gemm_query_buffer, const void* gemm_kv_buffer, const bool* key_padding_mask, const void* key_cache, const void* value_cache, void* qkv_buffer, void* workspace_buffer, void* output, void* new_key_cache, void* new_value_cache       
+);
+
+
+Status LaunchTransCtx(hipStream_t stream, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const bool reversed_bs, const float* input, float* output);
+
+Status LaunchTransCtx(hipStream_t stream, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const bool reversed_bs, const half* input, half* output);
+
+
+Status LaunchTransQkv(hipStream_t stream, const int matrix_num, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const bool reversed_bs, const float* input, float* output, int total_matrix_count = -1);
+
+Status LaunchTransQkv(hipStream_t stream, const int matrix_num, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const bool reversed_bs, const half* input, half* output, int total_matrix_count = -1);
+
+Status LaunchConcatTensorToTensor(hipStream_t stream, const int all_sequence_length, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const int matrix_num, const float* tensor_in, const float* tensor_add, float* tensor_out);
+
+Status LaunchConcatTensorToTensor(hipStream_t stream, const int all_sequence_length, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const int matrix_num, const half* tensor_in, const half* tensor_add, half* tensor_out);
+
+Status LaunchConcatPastToPresent(hipStream_t stream, const int all_sequence_length, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const float* past, const float* k_v, float* present);
+
+Status LaunchConcatPastToPresent(hipStream_t stream, const int all_sequence_length, const int sequence_length, const int batch_size, const int head_size, const int num_heads, const int max_threads_per_block, const half* past, const half* k_v, half* present);
+} 
+} 
+} 

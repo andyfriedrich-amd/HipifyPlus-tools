@@ -1,0 +1,146 @@
+
+
+
+
+
+
+
+
+#pragma once
+#include <vector>
+
+#include "core/common/common.h"
+#include "core/common/gsl.h"
+
+namespace onnxruntime {
+namespace rocm {
+
+
+
+constexpr int ACTUAL_TENSOR_GROUP_SIZE[8] = {1, 1, 2, 3, 4, 5, 6, 7};
+constexpr int MAX_BLOCK_COUNTS[8] = {256, 320, 320, 320, 320, 288, 288, 256};
+constexpr int MAX_TENSOR_GROUP_COUNTS[8] = {1, 96, 64, 32, 32, 32, 32, 32};
+constexpr int MAX_BLOCK_THREAD_COUNTS[8] = {256, 512, 512, 512, 512, 512, 512, 512};
+
+
+
+
+
+template <int TensorGroupSize>
+struct ChunkGroup {
+ 
+ 
+ 
+ 
+ 
+ int chunk_count = 0;
+ 
+ 
+ 
+ 
+ int chunk_size = 0;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ int block_index_to_tensor_group_index[MAX_BLOCK_COUNTS[TensorGroupSize]];
+ int block_index_to_chunk_start_index[MAX_BLOCK_COUNTS[TensorGroupSize]];
+ int tensor_sizes[MAX_TENSOR_GROUP_COUNTS[TensorGroupSize]];
+ 
+ 
+ 
+ 
+ void* tensor_ptrs[ACTUAL_TENSOR_GROUP_SIZE[TensorGroupSize]][MAX_TENSOR_GROUP_COUNTS[TensorGroupSize]];
+ 
+ const static int max_block_count = MAX_BLOCK_COUNTS[TensorGroupSize];
+ 
+ const static int max_tensor_group_count = MAX_TENSOR_GROUP_COUNTS[TensorGroupSize];
+ 
+ const static int thread_count_per_block = MAX_BLOCK_THREAD_COUNTS[TensorGroupSize];
+};
+
+template <int TensorGroupSize>
+constexpr int compute_max_tensor_size_per_launch(int element_count_per_thread) {
+ constexpr int block_count =
+   ChunkGroup<TensorGroupSize>::max_block_count;
+ constexpr int thread_count_per_block =
+   ChunkGroup<TensorGroupSize>::thread_count_per_block;
+ return block_count * thread_count_per_block * element_count_per_thread;
+}
+
+template <int TensorGroupSize, typename TMultiTensorFunctor, typename... TFunctorParams>
+void launch_multi_tensor_functor(
+  hipStream_t stream, const int chunk_size, gsl::span<int> tensor_sizes, gsl::span<std::vector<void*>> grouped_tensor_pointers, TMultiTensorFunctor multipleTensorKernel, TFunctorParams&&... kernelParams) {
+ 
+ ORT_ENFORCE(tensor_sizes.size() > 0);
+ ORT_ENFORCE(tensor_sizes.size() < static_cast<size_t>(INT_MAX));
+ ORT_ENFORCE(grouped_tensor_pointers.size() > 0);
+ ORT_ENFORCE(grouped_tensor_pointers.size() < static_cast<size_t>(INT_MAX));
+ ORT_ENFORCE(chunk_size > 0);
+ 
+ const int group_count = static_cast<int>(grouped_tensor_pointers.size());
+ 
+ const int group_size = static_cast<int>(grouped_tensor_pointers[0].size());
+ int tensor_group_index = 0;
+ int block_index = 0;
+
+ ORT_ENFORCE(grouped_tensor_pointers.size() == tensor_sizes.size());
+ ORT_ENFORCE(group_size == ACTUAL_TENSOR_GROUP_SIZE[TensorGroupSize]);
+ for (int i = 0; i < group_count; ++i) {
+  ORT_ENFORCE(grouped_tensor_pointers[i].size() == static_cast<size_t>(group_size));
+ }
+
+ 
+ ChunkGroup<TensorGroupSize> chunk_group;
+ for (int i = 0; i < group_count; ++i) {
+  
+  for (int j = 0; j < group_size; ++j) {
+   chunk_group.tensor_ptrs[j][tensor_group_index] = grouped_tensor_pointers[i][j];
+  }
+
+  
+  chunk_group.tensor_sizes[tensor_group_index] = tensor_sizes[i];
+  chunk_group.chunk_size = chunk_size;
+
+  const int chunk_count = (tensor_sizes[i] + chunk_size - 1) / chunk_size;
+
+  
+  for (int chunk_index = 0; chunk_index < chunk_count; ++chunk_index) {
+   chunk_group.block_index_to_tensor_group_index[block_index] = tensor_group_index;
+   chunk_group.block_index_to_chunk_start_index[block_index] = chunk_index * chunk_size;
+   
+   ++block_index;
+   chunk_group.chunk_count = block_index;
+
+   if (block_index == chunk_group.max_block_count) {
+    multipleTensorKernel(stream, chunk_group, std::forward<TFunctorParams>(kernelParams)...);
+    block_index = 0;
+   }
+  }
+
+  
+  ++tensor_group_index;
+  if (tensor_group_index == chunk_group.max_tensor_group_count) {
+   multipleTensorKernel(stream, chunk_group, std::forward<TFunctorParams>(kernelParams)...);
+   block_index = 0;
+   tensor_group_index = 0;
+  }
+ }
+
+ 
+ 
+ if (block_index != 0) {
+  multipleTensorKernel(stream, chunk_group, std::forward<TFunctorParams>(kernelParams)...);
+  block_index = 0;
+  tensor_group_index = 0;
+ }
+}
+
+} 
+} 

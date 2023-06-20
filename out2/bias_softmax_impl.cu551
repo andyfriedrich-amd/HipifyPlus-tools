@@ -1,0 +1,227 @@
+#include "hip/hip_runtime.h"
+
+
+
+#include "contrib_ops/rocm/math/bias_softmax_impl.h"
+
+#include <limits>
+#include <algorithm>
+
+#include "core/providers/rocm/rocm_common.h"
+#include "core/providers/rocm/cu_inc/binary_elementwise_impl.cuh"
+#include "core/providers/rocm/cu_inc/common.cuh"
+#include "core/providers/rocm/math/binary_elementwise_ops_impl_functors.cuh"
+#include "core/providers/rocm/math/softmax_common.h"
+#include "core/providers/rocm/math/softmax_warpwise_impl.cuh"
+#include "core/providers/rocm/shared_inc/accumulation_type.h"
+
+using namespace onnxruntime;
+using namespace onnxruntime::rocm;
+
+namespace onnxruntime {
+namespace contrib {
+namespace rocm {
+
+
+
+
+
+
+
+
+
+
+
+
+
+template <typename input_t, typename output_t, typename acc_t, int log2_elements, bool is_inner_broadcast>
+__global__ void BiasSoftmaxWarpForward(output_t* output, const input_t* input, const input_t* input_bias, int element_count, int batch_count, fast_divmod bias_broadcast_fdm) {
+ 
+ 
+ constexpr int next_power_of_two = 1 << log2_elements;
+ constexpr int WARP_SIZE = next_power_of_two < GPU_WARP_SIZE ? next_power_of_two : GPU_WARP_SIZE;
+ constexpr int WARP_ITERATIONS = next_power_of_two / WARP_SIZE;
+#ifdef USE_ROCM
+ constexpr int WARP_BATCH = 1;
+#else
+ constexpr int WARP_BATCH = (next_power_of_two <= 128) ? 2 : 1;
+#endif
+
+ 
+ int first_batch = (blockDim.y * blockIdx.x + threadIdx.y) * WARP_BATCH;
+
+ 
+ int local_batches = batch_count - first_batch;
+ if (local_batches > WARP_BATCH) local_batches = WARP_BATCH;
+
+ 
+ int local_idx = threadIdx.x;
+
+ 
+ input += first_batch * element_count + local_idx;
+ output += first_batch * element_count + local_idx;
+
+ 
+ acc_t elements[WARP_BATCH][WARP_ITERATIONS];
+#pragma unroll
+ for (int i = 0; i < WARP_BATCH; ++i) {
+  
+  
+  int bias_batch_offset =
+    is_inner_broadcast ? bias_broadcast_fdm.div(first_batch + i) : bias_broadcast_fdm.mod(first_batch + i);
+  int bias_offset = bias_batch_offset * element_count + local_idx;
+  int batch_element_count = (i >= local_batches) ? 0 : element_count;
+#pragma unroll
+  for (int it = 0; it < WARP_ITERATIONS; ++it) {
+   int element_index = local_idx + it * WARP_SIZE;
+   if (element_index < batch_element_count) {
+    elements[i][it] =
+      (acc_t)input[i * element_count + it * WARP_SIZE] + (acc_t)input_bias[bias_offset + it * WARP_SIZE];
+   } else {
+    elements[i][it] = -std::numeric_limits<acc_t>::infinity();
+   }
+  }
+ }
+
+ 
+ acc_t max_value[WARP_BATCH];
+#pragma unroll
+ for (int i = 0; i < WARP_BATCH; ++i) {
+  max_value[i] = elements[i][0];
+#pragma unroll
+  for (int it = 1; it < WARP_ITERATIONS; ++it) {
+   max_value[i] = (max_value[i] > elements[i][it]) ? max_value[i] : elements[i][it];
+  }
+ }
+ warp_reduce<acc_t, WARP_BATCH, WARP_SIZE, Max>(max_value);
+
+ 
+ acc_t sum[WARP_BATCH]{acc_t(0.0)};
+#pragma unroll
+ for (int i = 0; i < WARP_BATCH; ++i) {
+#pragma unroll
+  for (int it = 0; it < WARP_ITERATIONS; ++it) {
+   elements[i][it] = expf((acc_t)(elements[i][it] - max_value[i]));
+   sum[i] += elements[i][it];
+  }
+ }
+ warp_reduce<acc_t, WARP_BATCH, WARP_SIZE, Add>(sum);
+
+
+#pragma unroll
+ for (int i = 0; i < WARP_BATCH; ++i) {
+  if (i >= local_batches) break;
+#pragma unroll
+  for (int it = 0; it < WARP_ITERATIONS; ++it) {
+   int element_index = local_idx + it * WARP_SIZE;
+   if (element_index < element_count) {
+    output[i * element_count + it * WARP_SIZE] = elements[i][it] / sum[i];
+   } else {
+    break;
+   }
+  }
+ }
+}
+
+template <typename T>
+Status BiasSoftmaxImpl(hipStream_t stream, miopenHandle_t miopen_handle, T* output_data, const T* input_data, const T* bias_data, int element_count, int batch_count, bool is_inner_broadcast, int bias_broadcast_size) {
+ if (element_count == 0) return Status::OK();
+ if (element_count <= 1024 && element_count * static_cast<int>(sizeof(T)) <= 4096) {
+  typedef AccumulationType_t<T> AccT;
+  int log2_elements = log2_ceil(element_count);
+  const int next_power_of_two = 1 << log2_elements;
+
+  
+  int warp_size = std::min(next_power_of_two, GPU_WARP_SIZE_HOST);
+
+  
+#ifdef USE_ROCM
+  int batches_per_warp = 1;
+  constexpr int threads_per_block = 256;
+#else
+  int batches_per_warp = (next_power_of_two <= 128) ? 2 : 1;
+  constexpr int threads_per_block = 128;
+#endif
+
+  int warps_per_block = (threads_per_block / warp_size);
+  int batches_per_block = warps_per_block * batches_per_warp;
+  int blocks = (batch_count + batches_per_block - 1) / batches_per_block;
+  dim3 threads(warp_size, warps_per_block, 1);
+
+  fast_divmod bias_broadcast_fdm = fast_divmod(bias_broadcast_size);
+
+  
+  switch (log2_elements) {
+#define LAUNCHE_BIAS_SOFTMAX_KERNEL(log2_elements_value, is_inner_broadcast_value)                   BiasSoftmaxWarpForward<T, T, AccT, log2_elements_value, is_inner_broadcast_value><<<blocks, threads, 0, stream>>>(    output_data, input_data, bias_data, element_count, batch_count, bias_broadcast_fdm)
+#define CASE_LOG2_ELEMENTS(log2_elements_value)          case log2_elements_value: {                    if (is_inner_broadcast) {                     LAUNCHE_BIAS_SOFTMAX_KERNEL(log2_elements_value, true);    } else {                             LAUNCHE_BIAS_SOFTMAX_KERNEL(log2_elements_value, false);   }                               } break
+   CASE_LOG2_ELEMENTS(0);  
+   CASE_LOG2_ELEMENTS(1);  
+   CASE_LOG2_ELEMENTS(2);  
+   CASE_LOG2_ELEMENTS(3);  
+   CASE_LOG2_ELEMENTS(4);  
+   CASE_LOG2_ELEMENTS(5);  
+   CASE_LOG2_ELEMENTS(6);  
+   CASE_LOG2_ELEMENTS(7);  
+   CASE_LOG2_ELEMENTS(8);  
+   CASE_LOG2_ELEMENTS(9);  
+   CASE_LOG2_ELEMENTS(10); 
+#undef CASE_LOG2_ELEMENTS
+#undef LAUNCHE_BIAS_SOFTMAX_KERNEL
+  }
+  return Status::OK();
+ }
+
+ 
+ 
+ int output_rank_or_simple_broadcast = 3;
+ TArray<int64_t> rhs_strides;
+ TArray<fast_divmod> output_fdms;
+ const TArray<int64_t>* p_rhs_strides = nullptr;
+ const TArray<fast_divmod>* p_output_fdms = nullptr;
+ fast_divmod fdm_h(1);
+ fast_divmod fdm_c;
+ if ((is_inner_broadcast && bias_broadcast_size == 1) || (!is_inner_broadcast && bias_broadcast_size == batch_count)) {
+  
+  output_rank_or_simple_broadcast = static_cast<int>(SimpleBroadcast::NoBroadcast);
+ } else if (!is_inner_broadcast) {
+  output_rank_or_simple_broadcast = static_cast<int>(SimpleBroadcast::RightPerChannelBatchN);
+  fdm_c = fast_divmod(element_count * bias_broadcast_size);
+ } else {
+  rhs_strides.SetSize(3);
+  rhs_strides[0] = static_cast<int64_t>(element_count);
+  rhs_strides[1] = 0LL;
+  rhs_strides[2] = 1LL;
+  p_rhs_strides = &rhs_strides;
+  output_fdms.SetSize(3);
+  output_fdms[0] = fast_divmod(element_count * bias_broadcast_size);
+  output_fdms[1] = fast_divmod(element_count);
+  output_fdms[2] = fast_divmod(1);
+  p_output_fdms = &output_fdms;
+ }
+
+ BinaryElementWiseImpl(stream, output_rank_or_simple_broadcast, nullptr, input_data, p_rhs_strides, bias_data, p_output_fdms, fdm_h, fdm_c, output_data, OP_Add<T, T, T>(), static_cast<size_t>(batch_count * element_count));
+
+ 
+ const int64_t dims[]{batch_count, 1, 1, element_count};
+ const auto alpha = Consts<T>::One;
+ const auto beta = Consts<T>::Zero;
+ MiopenTensor input_tensor, output_tensor;
+ ORT_RETURN_IF_ERROR(input_tensor.Set(dims, MiopenTensor::GetDataType<T>()));
+ ORT_RETURN_IF_ERROR(output_tensor.Set(dims, MiopenTensor::GetDataType<T>()));
+ return SoftmaxForward(miopen_handle, &alpha, input_tensor, output_data, &beta, output_tensor, output_data);
+}
+
+#define SPECIALIZED_BIAS_SOFTMAX_IMPL(T)                                       template Status BiasSoftmaxImpl<T>(hipStream_t stream, miopenHandle_t miopen_handle, T * output_data, const T* input_data, const T* bias_data, int element_count, int batch_count, bool is_inner_broadcast, int bias_broadcast_size);
+
+
+SPECIALIZED_BIAS_SOFTMAX_IMPL(float)
+SPECIALIZED_BIAS_SOFTMAX_IMPL(half)
+#ifdef USE_ROCM
+SPECIALIZED_BIAS_SOFTMAX_IMPL(double)
+#endif
+
+#undef SPECIALIZED_BIAS_SOFTMAX_IMPL
+
+} 
+} 
+} 

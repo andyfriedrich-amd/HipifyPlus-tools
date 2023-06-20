@@ -90,7 +90,7 @@ def fix_log(file_path, out_path):
         content = content.replace(' -> ', '\n')
 
         with open(out_path, 'w', encoding="utf-8") as file:
-            file.write(content)
+            file.write(content)    
 
 
 def code_compression_test(out_path, output_directory):
@@ -105,6 +105,7 @@ def code_compression_test(out_path, output_directory):
     counter_for_compress = 0
     counter_above = 0
     counter_file_miss = 0
+    missed_files = []
     with open(out_path, "r", encoding="utf-8") as file:
         text = file.read()
         #   print(text)
@@ -207,14 +208,14 @@ if __name__ == "__main__":
     assert enc.decode(enc.encode("hello world")) == "hello world"
     file_path = "../hipify.log"
     out_path = '../betterlog.log'
-    output_directory = './out'
+    output_directory = './out2'
     fix_log('../hipify.log', '../betterlog.log')
     code_compression_test(out_path, output_directory)
     
-    file_path_2 = '../skipped_hipify.log'
-    out_path_2 = '../betterskip.log'
-    fix_log(file_path_2, out_path_2)
-    code_compression_test(out_path_2, output_directory)
-    #count_token()
+    # file_path_2 = '../skipped_hipify.log'
+    # out_path_2 = '../betterskip.log'
+    # fix_log(file_path_2, out_path_2)
+    # code_compression_test(out_path_2, output_directory)
+    # #count_token()
 
     
